@@ -3,6 +3,7 @@
 ## ¿Qué es?
 
 RecetApp es una aplicación web para descubrir recetas de cocina. El usuario puede navegar por recetas organizadas por categoría, ver el detalle de cada una y guardar sus favoritas.
+
 ---
 
 ## Problema que resuelve
