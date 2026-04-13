@@ -52,7 +52,6 @@ Cualquier persona que cocine y quiera inspirarse con recetas de forma rápida y 
 - React + TypeScript
 - Vite
 - Tailwind CSS
-- React
 
 ### Backend
 - Node.js
