@@ -35,7 +35,8 @@ Cualquier persona que cocine y quiera inspirarse con recetas de forma rápida y 
 
 - Página de favoritas vacía con mensaje cuando no hay ninguna guardada
 - Animación al añadir o quitar de favoritas
-- Modo oscuro
+- Botón de ordenar recetas por orden alfabético
+- Botón receta aleatoria
 
 ---
 

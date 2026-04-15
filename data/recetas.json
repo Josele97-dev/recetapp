@@ -1,0 +1,659 @@
+[
+  {
+    "id": 1,
+    "nombre": "Brownie de chocolate",
+    "categoria": "Postres",
+    "descripcion": "Brownie esponjoso y húmedo con intenso sabor a chocolate, ideal para 8 porciones. Se prepara en unos 15 minutos y se hornea en 25, resultando en un postre rápido y delicioso.",
+    "imagen": "https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg",
+    "ingredientes": [
+      "200g de chocolate negro troceado",
+      "100g de mantequilla derretida",
+      "2 huevos grandes",
+      "150g de azúcar",
+      "100g de harina tamizada"
+    ],
+    "pasos": [
+      "Derrite el chocolate junto con la mantequilla a fuego suave o en microondas.",
+      "Añade el azúcar y mezcla hasta que se integre completamente.",
+      "Incorpora los huevos uno a uno, batiendo bien tras cada adición.",
+      "Agrega la harina tamizada y mezcla con movimientos envolventes.",
+      "Vierte la mezcla en un molde y hornea a 180°C durante 25 minutos hasta que quede jugoso."
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Ensalada César",
+    "categoria": "Entrantes",
+    "descripcion": "Clásica ensalada César con pollo a la plancha, lista en 20 minutos y perfecta para 2 personas. Fresca, crujiente y con un aderezo cremoso.",
+    "imagen": "https://images.aws.nestle.recipes/resized/69e14ff7a1b1fea5d3976defa9d4903a_CPK_cesar_a-hero_1200_628.jpg",
+    "ingredientes": [
+      "1 lechuga romana grande lavada y troceada",
+      "50g de queso parmesano en lascas",
+      "Un puñado de crutones",
+      "Aderezo César al gusto",
+      "2 filetes de pollo a la plancha cortados en tiras"
+    ],
+    "pasos": [
+      "Corta la lechuga en trozos grandes y colócala en un bol.",
+      "Cocina los filetes de pollo a la plancha y córtalos en tiras finas.",
+      "Añade los crutones y el pollo sobre la lechuga.",
+      "Agrega el aderezo César y mezcla suavemente.",
+      "Termina con las lascas de parmesano por encima."
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Espaguetis a la carbonara",
+    "categoria": "Pasta",
+    "descripcion": "Pasta italiana cremosa con panceta, huevo y parmesano. Lista en 25 minutos y perfecta para 4 personas.",
+    "imagen": "https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg",
+    "ingredientes": [
+      "400g de espaguetis",
+      "150g de panceta en cubos",
+      "3 huevos",
+      "100g de queso parmesano rallado",
+      "Pimienta negra recién molida"
+    ],
+    "pasos": [
+      "Cuece los espaguetis en agua con sal hasta que estén al dente.",
+      "Fríe la panceta en una sartén hasta que quede crujiente.",
+      "Bate los huevos con el parmesano y abundante pimienta.",
+      "Mezcla la pasta caliente con la panceta fuera del fuego.",
+      "Añade la mezcla de huevo y remueve rápido para que espese sin cuajar."
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Pollo al horno con patatas",
+    "categoria": "Carnes",
+    "descripcion": "Pollo entero asado con patatas doradas, aromatizado con ajo y romero. Ideal para 4 personas y listo en aproximadamente 1 hora y 45 minutos.",
+    "imagen": "https://www.themealdb.com/images/media/meals/020z181619788503.jpg",
+    "ingredientes": [
+      "1 pollo entero limpio",
+      "4 patatas cortadas en gajos",
+      "Aceite de oliva",
+      "3 dientes de ajo picados",
+      "Romero fresco",
+      "Sal y pimienta"
+    ],
+    "pasos": [
+      "Precalienta el horno a 200°C.",
+      "Coloca las patatas en una bandeja y añade aceite, sal y romero.",
+      "Pon el pollo encima y úntalo con aceite, ajo, sal y pimienta.",
+      "Hornea durante 1 hora y media hasta que esté dorado y jugoso.",
+      "Deja reposar unos minutos antes de servir."
+    ]
+  },
+
+  {
+    "id": 5,
+    "nombre": "Gazpacho andaluz",
+    "categoria": "Sopas",
+    "descripcion": "Sopa fría tradicional del sur de España, refrescante y ligera. Lista en 10 minutos y perfecta para 4 personas.",
+    "imagen": "https://www.themealdb.com/images/media/meals/58oia61564916529.jpg",
+    "ingredientes": [
+      "1kg de tomates maduros",
+      "1 pepino pelado",
+      "1 pimiento verde",
+      "1 diente de ajo",
+      "Aceite de oliva virgen extra",
+      "Vinagre de vino",
+      "Sal al gusto"
+    ],
+    "pasos": [
+      "Trocea los tomates, el pepino y el pimiento.",
+      "Coloca todo en una batidora junto con el ajo.",
+      "Tritura hasta obtener una mezcla fina.",
+      "Añade aceite, vinagre y sal al gusto.",
+      "Refrigera al menos 1 hora antes de servir bien frío."
+    ]
+  },
+
+  {
+    "id": 6,
+    "nombre": "Ensalada griega",
+    "categoria": "Ensaladas",
+    "descripcion": "Ensalada fresca con tomate, pepino, olivas y queso feta. Lista en 10 minutos y perfecta para 2–3 personas.",
+    "imagen": "https://recetasdecocina.elmundo.es/wp-content/uploads/2025/05/ensalada-griega-1024x683.jpg",
+    "ingredientes": [
+      "2 tomates maduros",
+      "1 pepino",
+      "100g de queso feta en cubos",
+      "Un puñado de olivas negras",
+      "Aceite de oliva",
+      "Orégano seco"
+    ],
+    "pasos": [
+      "Corta el tomate y el pepino en trozos medianos.",
+      "Añade las olivas y el queso feta.",
+      "Aliña con aceite de oliva y espolvorea orégano.",
+      "Mezcla suavemente y sirve fresca."
+    ]
+  },
+
+  {
+    "id": 7,
+    "nombre": "Tarta de queso",
+    "categoria": "Postres",
+    "descripcion": "Tarta de queso cremosa con base de galleta, ideal para 8 porciones. Se prepara en 15 minutos y se hornea en 40.",
+    "imagen": "https://recetasdecocina.elmundo.es/wp-content/uploads/2022/11/tarta-queso-horno-receta.jpg",
+    "ingredientes": [
+      "500g de queso crema",
+      "200g de galletas trituradas",
+      "100g de mantequilla derretida",
+      "3 huevos",
+      "150g de azúcar"
+    ],
+    "pasos": [
+      "Mezcla las galletas trituradas con la mantequilla y forma la base en un molde.",
+      "Bate el queso crema con los huevos y el azúcar hasta obtener una mezcla suave.",
+      "Vierte la mezcla sobre la base.",
+      "Hornea a 170°C durante 40 minutos.",
+      "Deja enfriar antes de desmoldar."
+    ]
+  },
+
+  {
+    "id": 8,
+    "nombre": "Crema de calabaza",
+    "categoria": "Sopas",
+    "descripcion": "Crema suave y reconfortante de calabaza con un toque de jengibre. Lista en 30 minutos y perfecta para 4 personas.",
+    "imagen": "https://static.bainet.es/clip/8f39485e-d395-43dc-897c-6bfd73daa501_source-aspect-ratio_1600w_0.jpg",
+    "ingredientes": [
+      "1kg de calabaza pelada y troceada",
+      "1 cebolla picada",
+      "2 dientes de ajo",
+      "Un trocito de jengibre fresco",
+      "Caldo de verduras",
+      "Un chorrito de nata"
+    ],
+    "pasos": [
+      "Sofríe la cebolla y el ajo en una olla.",
+      "Añade la calabaza y el jengibre.",
+      "Cubre con caldo y cocina 20 minutos.",
+      "Tritura hasta obtener una crema fina.",
+      "Añade nata al gusto y mezcla."
+    ]
+  },
+
+  {
+    "id": 9,
+    "nombre": "Macarrones con tomate",
+    "categoria": "Pasta",
+    "descripcion": "Clásicos macarrones con salsa de tomate casera. Plato sencillo, rápido y perfecto para 4 personas.",
+    "imagen": "https://i.blogs.es/552fc0/macarrones-con-tomate-2/1366_2000.jpg",
+    "ingredientes": [
+      "400g de macarrones",
+      "500g de tomate triturado",
+      "1 cebolla picada",
+      "1 diente de ajo",
+      "Aceite de oliva",
+      "Sal y una pizca de azúcar"
+    ],
+    "pasos": [
+      "Cuece los macarrones al dente.",
+      "Sofríe la cebolla y el ajo en aceite.",
+      "Añade el tomate y cocina 15 minutos.",
+      "Corrige la acidez con una pizca de azúcar.",
+      "Mezcla la salsa con la pasta y sirve."
+    ]
+  },
+
+  {
+    "id": 10,
+    "nombre": "Albóndigas en salsa",
+    "categoria": "Carnes",
+    "descripcion": "Albóndigas jugosas en salsa de tomate con verduras. Plato casero ideal para 4 personas.",
+    "imagen": "https://recetasdecocina.elmundo.es/wp-content/uploads/2024/10/albondigas-en-salsa-1024x683.jpg",
+    "ingredientes": [
+      "500g de carne picada",
+      "1 huevo",
+      "Pan rallado",
+      "Tomate triturado",
+      "1 cebolla picada",
+      "1 diente de ajo",
+      "Perejil picado"
+    ],
+    "pasos": [
+      "Mezcla la carne con el huevo, pan rallado y perejil.",
+      "Forma las albóndigas y fríelas ligeramente.",
+      "Prepara la salsa sofriendo cebolla y ajo.",
+      "Añade el tomate y cocina unos minutos.",
+      "Incorpora las albóndigas y cocina 15 minutos más."
+    ]
+  },
+
+  {
+    "id": 11,
+    "nombre": "Flan casero",
+    "categoria": "Postres",
+    "descripcion": "Flan tradicional con caramelo líquido y textura suave. Rinde para 6 porciones y se cocina al baño maría.",
+    "imagen": "https://quieropostre.com/wp-content/uploads/2021/08/flan-de-huevo-casero-683x1024.jpg",
+    "ingredientes": [
+      "500ml de leche",
+      "4 huevos",
+      "120g de azúcar",
+      "Caramelo líquido"
+    ],
+    "pasos": [
+      "Mezcla la leche con los huevos y el azúcar.",
+      "Cubre el fondo del molde con caramelo.",
+      "Vierte la mezcla en el molde.",
+      "Cocina al baño maría durante 45 minutos.",
+      "Deja enfriar y desmolda."
+    ]
+  },
+
+  {
+    "id": 12,
+    "nombre": "Bruschetta italiana",
+    "categoria": "Entrantes",
+    "descripcion": "Pan tostado con tomate, ajo y albahaca fresca. Ideal como entrante rápido, listo en 10 minutos.",
+    "imagen": "https://cdn.loveandlemons.com/wp-content/uploads/2025/05/bruschetta-recipe-580x802.jpg",
+    "ingredientes": [
+      "Rebanadas de pan rústico",
+      "2 tomates picados",
+      "1 diente de ajo",
+      "Hojas de albahaca",
+      "Aceite de oliva",
+      "Sal"
+    ],
+    "pasos": [
+      "Tuesta las rebanadas de pan.",
+      "Frota el ajo sobre el pan caliente.",
+      "Mezcla el tomate con albahaca, aceite y sal.",
+      "Coloca la mezcla sobre el pan y sirve."
+    ]
+  },
+
+  {
+    "id": 13,
+    "nombre": "Lasaña boloñesa",
+    "categoria": "Pasta",
+    "descripcion": "Lasaña clásica con carne, tomate y bechamel. Plato completo para 4–6 personas.",
+    "imagen": "https://www.themealdb.com/images/media/meals/wtsvxx1511296896.jpg",
+    "ingredientes": [
+      "Láminas de lasaña",
+      "500g de carne picada",
+      "Tomate triturado",
+      "Bechamel casera",
+      "Queso rallado"
+    ],
+    "pasos": [
+      "Cocina la carne con tomate hasta obtener una salsa espesa.",
+      "Monta capas de pasta, carne y bechamel.",
+      "Cubre con queso rallado.",
+      "Hornea 40 minutos a 180°C.",
+      "Deja reposar antes de cortar."
+    ]
+  },
+
+  {
+    "id": 14,
+    "nombre": "Chuletas de cerdo a la plancha",
+    "categoria": "Carnes",
+    "descripcion": "Chuletas jugosas con ajo y perejil, listas en 10 minutos. Perfectas para una comida rápida.",
+    "imagen": "https://i.blogs.es/b0e5d8/chuletas-min/1366_2000.jpg",
+    "ingredientes": [
+      "4 chuletas de cerdo",
+      "2 dientes de ajo picados",
+      "Perejil fresco",
+      "Aceite de oliva",
+      "Sal y pimienta"
+    ],
+    "pasos": [
+      "Salpimenta las chuletas.",
+      "Cocina a la plancha 4 minutos por cada lado.",
+      "Añade ajo y perejil picado antes de servir."
+    ]
+  },
+
+  {
+    "id": 15,
+    "nombre": "Sopa de cebolla francesa",
+    "categoria": "Sopas",
+    "descripcion": "Sopa reconfortante con cebolla caramelizada y queso gratinado. Ideal para 4 personas.",
+    "imagen": "https://recetasdecocina.elmundo.es/wp-content/uploads/2024/10/sopa-de-cebolla-receta-1024x683.jpg",
+    "ingredientes": [
+      "4 cebollas en juliana",
+      "Caldo de carne",
+      "Mantequilla",
+      "Rebanadas de pan tostado",
+      "Queso gruyere rallado"
+    ],
+    "pasos": [
+      "Carameliza la cebolla lentamente con mantequilla.",
+      "Añade el caldo y cocina 20 minutos.",
+      "Sirve con pan tostado y queso gratinado al horno."
+    ]
+  },
+
+  {
+    "id": 16,
+    "nombre": "Ensalada caprese",
+    "categoria": "Ensaladas",
+    "descripcion": "Ensalada italiana fresca con tomate, mozzarella y albahaca. Lista en 5 minutos.",
+    "imagen": "https://i.blogs.es/2d572b/caprese/1366_2000.jpg",
+    "ingredientes": [
+      "2 tomates grandes",
+      "200g de mozzarella fresca",
+      "Hojas de albahaca",
+      "Aceite de oliva",
+      "Sal"
+    ],
+    "pasos": [
+      "Corta el tomate y la mozzarella en rodajas.",
+      "Alterna las rodajas en un plato.",
+      "Añade albahaca fresca y aceite de oliva.",
+      "Sal al gusto."
+    ]
+  },
+
+  {
+    "id": 17,
+    "nombre": "Tiramisú clásico",
+    "categoria": "Postres",
+    "descripcion": "Postre italiano con café, cacao y crema mascarpone. Rinde para 6 porciones.",
+    "imagen": "https://recetasdecocina.elmundo.es/wp-content/uploads/2022/08/tiramisu-postre-italiano.jpg",
+    "ingredientes": [
+      "Bizcochos de soletilla",
+      "Café fuerte",
+      "250g de mascarpone",
+      "2 huevos",
+      "Cacao en polvo"
+    ],
+    "pasos": [
+      "Bate las yemas con el mascarpone hasta obtener una crema suave.",
+      "Moja los bizcochos en café sin empaparlos demasiado.",
+      "Alterna capas de crema y bizcochos.",
+      "Espolvorea cacao por encima y refrigera."
+    ]
+  },
+  {
+    "id": 18,
+  "nombre": "Hummus casero",
+  "categoria": "Entrantes",
+"descripcion": "Crema de garbanzos suave con tahini y limón, perfecta como dip para compartir con pan de pita o verduras crudas. Ideal para 4 personas y lista en pocos minutos.",  "imagen": "https://img2.rtve.es/n/16019930?w=1600",
+  "ingredientes": [
+    "400g de garbanzos cocidos y escurridos",
+    "2 cucharadas de tahini (pasta de sésamo)",
+    "Zumo de medio limón (o al gusto)",
+    "1 diente de ajo pequeño",
+    "Aceite de oliva virgen extra",
+    "Sal",
+    "Un poco de agua fría (si hace falta para ajustar la textura)"
+  ],
+  "pasos": [
+    "Coloca los garbanzos cocidos en el vaso de la batidora o procesador de alimentos.",
+    "Añade el tahini, el diente de ajo, el zumo de limón y una pizca de sal.",
+    "Tritura mientras incorporas un chorrito de aceite de oliva hasta obtener una crema espesa.",
+    "Si la textura queda demasiado densa, añade poco a poco agua fría hasta lograr la consistencia deseada.",
+    "Prueba y ajusta de sal y limón si es necesario.",
+    "Sirve en un bol, añade un hilo de aceite de oliva por encima y, si quieres, espolvorea pimentón o semillas de sésamo."
+  ]
+  },
+  {
+    "id": 19,
+    "nombre": "Pasta al pesto",
+    "categoria": "Pasta",
+    "descripcion": "Pasta con salsa de albahaca, piñones y parmesano, aromática y muy rápida de preparar. Ideal para 4 personas.",
+    "imagen": "https://www.themealdb.com/images/media/meals/qrqywr1503066605.jpg",
+    "ingredientes": [
+      "400g de pasta (espaguetis o similar)",
+      "Un buen manojo de albahaca fresca",
+      "2 cucharadas de piñones",
+      "50g de queso parmesano rallado",
+      "Aceite de oliva virgen extra",
+      "Sal"
+    ],
+    "pasos": [
+      "Cuece la pasta en abundante agua con sal hasta que esté al dente.",
+      "Mientras tanto, tritura la albahaca con los piñones, el parmesano y un chorro generoso de aceite de oliva.",
+      "Ajusta de sal y añade más aceite si es necesario hasta obtener una salsa cremosa.",
+      "Escurre la pasta reservando un poco de agua de cocción.",
+      "Mezcla la pasta caliente con el pesto, añadiendo un poco de agua de cocción si hace falta para aligerar la salsa."
+    ]
+  },
+  {
+    "id": 20,
+    "nombre": "Estofado de ternera",
+    "categoria": "Carnes",
+    "descripcion": "Carne de ternera tierna cocinada lentamente con verduras y patatas. Plato de cuchara reconfortante para 4 personas.",
+    "imagen": "https://recetasdecocina.elmundo.es/wp-content/uploads/2020/07/estofado-de-ternera.jpg",
+    "ingredientes": [
+      "600g de ternera en trozos",
+      "2 zanahorias en rodajas",
+      "1 cebolla picada",
+      "Caldo de carne o verduras",
+      "2 patatas troceadas",
+      "Aceite de oliva",
+      "Sal y pimienta"
+    ],
+    "pasos": [
+      "Sella la carne en una olla con aceite caliente hasta que esté dorada.",
+      "Añade la cebolla y la zanahoria y sofríe unos minutos.",
+      "Cubre con caldo y cocina a fuego lento durante unos 45 minutos.",
+      "Agrega las patatas y cocina 15–20 minutos más hasta que todo esté tierno.",
+      "Rectifica de sal y pimienta antes de servir."
+    ]
+  },
+  {
+    "id": 21,
+    "nombre": "Crema de champiñones",
+    "categoria": "Sopas",
+    "descripcion": "Crema suave de champiñones con nata, perfecta como primer plato ligero para 4 personas.",
+    "imagen": "https://recetasdecocina.elmundo.es/wp-content/uploads/2024/12/crema-de-champinones-1024x683.jpg",
+    "ingredientes": [
+      "300g de champiñones laminados",
+      "1 cebolla picada",
+      "Caldo de verduras",
+      "Un chorrito de nata",
+      "Aceite de oliva",
+      "Sal y pimienta"
+    ],
+    "pasos": [
+      "Sofríe la cebolla en aceite hasta que esté transparente.",
+      "Añade los champiñones y cocina hasta que suelten el agua y se doren ligeramente.",
+      "Cubre con caldo de verduras y cocina 15 minutos.",
+      "Tritura hasta obtener una crema fina.",
+      "Añade nata al gusto, rectifica de sal y pimienta y calienta unos minutos más."
+    ]
+  },
+  {
+    "id": 22,
+    "nombre": "Ensalada de quinoa",
+    "categoria": "Ensaladas",
+    "descripcion": "Ensalada fresca con quinoa, verduras y aliño de limón. Ideal como plato único ligero para 2–3 personas.",
+    "imagen": "https://images.cookforyourlife.org/wp-content/uploads/2022/09/Citrus-Avocado-Salad.png",
+    "ingredientes": [
+      "200g de quinoa",
+      "1 pepino picado",
+      "2 tomates picados",
+      "Zumo de 1 limón",
+      "Aceite de oliva",
+      "Sal"
+    ],
+    "pasos": [
+      "Lava bien la quinoa bajo el grifo y cuécela en agua con sal según las instrucciones del paquete.",
+      "Deja que se temple y suéltala con un tenedor.",
+      "Mezcla la quinoa con el pepino y el tomate en un bol.",
+      "Aliña con el zumo de limón, aceite de oliva y sal al gusto.",
+      "Remueve bien y sirve fría o a temperatura ambiente."
+    ]
+  },
+  {
+    "id": 23,
+    "nombre": "Crème brûlée",
+    "categoria": "Postres",
+    "descripcion": "Crema suave de vainilla con una capa crujiente de azúcar caramelizado en la superficie. Postre elegante para 4 personas.",
+    "imagen": "https://www.themealdb.com/images/media/meals/uryqru1511798039.jpg",
+    "ingredientes": [
+      "500ml de nata líquida",
+      "4 yemas de huevo",
+      "100g de azúcar",
+      "1 vaina de vainilla o esencia",
+      "Azúcar extra para caramelizar la superficie"
+    ],
+    "pasos": [
+      "Mezcla las yemas con el azúcar hasta que blanqueen.",
+      "Calienta la nata con la vainilla sin que llegue a hervir.",
+      "Vierte la nata caliente poco a poco sobre las yemas, mezclando bien.",
+      "Reparte la mezcla en ramequines y hornea al baño maría hasta que cuaje.",
+      "Deja enfriar, espolvorea azúcar por encima y carameliza con un soplete o bajo el grill."
+    ]
+  },
+  {
+    "id": 24,
+    "nombre": "Pan de ajo",
+    "categoria": "Entrantes",
+    "descripcion": "Pan tostado con mantequilla de ajo y perejil, perfecto como acompañamiento o entrante para compartir.",
+    "imagen": "https://jetextramar.com/wp-content/uploads/2022/01/receta-pan-con-ajo-en-dados.jpg",
+    "ingredientes": [
+      "Rebanadas de pan",
+      "Mantequilla a temperatura ambiente",
+      "2 dientes de ajo picados o triturados",
+      "Perejil fresco picado",
+      "Una pizca de sal"
+    ],
+    "pasos": [
+      "Mezcla la mantequilla con el ajo, el perejil y una pizca de sal.",
+      "Unta generosamente las rebanadas de pan con la mezcla.",
+      "Coloca el pan en una bandeja de horno.",
+      "Hornea unos 10 minutos a 180°C o hasta que esté dorado.",
+      "Sirve caliente."
+    ]
+  },
+  {
+    "id": 25,
+    "nombre": "Raviolis con salsa de tomate",
+    "categoria": "Pasta",
+    "descripcion": "Raviolis rellenos acompañados de una sencilla salsa de tomate casera. Plato rápido y sabroso para 2–3 personas.",
+    "imagen": "https://www.pequerecetas.com/wp-content/uploads/2023/02/raviolis-con-tomate.jpg",
+    "ingredientes": [
+      "Raviolis rellenos (frescos o secos)",
+      "400g de tomate triturado",
+      "1 diente de ajo picado",
+      "Hojas de albahaca fresca",
+      "Aceite de oliva",
+      "Sal"
+    ],
+    "pasos": [
+      "Cuece los raviolis en agua con sal siguiendo las instrucciones del paquete.",
+      "En una sartén, sofríe el ajo en aceite sin que se queme.",
+      "Añade el tomate triturado y cocina unos 10–15 minutos.",
+      "Agrega sal al gusto y unas hojas de albahaca.",
+      "Mezcla la salsa con los raviolis escurridos y sirve inmediatamente."
+    ]
+  },
+  {
+    "id": 26,
+    "nombre": "Costillas BBQ",
+    "categoria": "Carnes",
+    "descripcion": "Costillas de cerdo tiernas y jugosas con salsa barbacoa, perfectas para compartir en una comida informal.",
+    "imagen": "https://i.blogs.es/8eac84/costillas_bbq/1366_2000.jpg",
+    "ingredientes": [
+      "1kg de costillas de cerdo",
+      "Salsa barbacoa al gusto",
+      "Sal",
+      "Pimienta",
+      "Un chorrito de aceite de oliva"
+    ],
+    "pasos": [
+      "Salpimenta las costillas y úntalas con un poco de aceite.",
+      "Hornea a 180°C durante aproximadamente 1 hora, dándoles la vuelta a mitad de cocción.",
+      "Pinta las costillas con salsa barbacoa y hornea 20 minutos más.",
+      "Si quieres más caramelización, sube un poco la temperatura al final.",
+      "Deja reposar unos minutos y sirve cortando entre los huesos."
+    ]
+  },
+  {
+    "id": 27,
+    "nombre": "Sopa minestrone",
+    "categoria": "Sopas",
+    "descripcion": "Sopa italiana con verduras variadas y pasta corta, muy completa y reconfortante. Ideal para 4 personas.",
+    "imagen": "https://comedera.com/wp-content/uploads/sites/9/2018/06/sopa-minestrone.jpg?fit=1316,938&crop=0px,99px,1316px,740px",
+    "ingredientes": [
+      "2 zanahorias en dados",
+      "1 tallo de apio picado",
+      "2 tomates picados o triturados",
+      "Pasta corta (tipo conchitas o macarrones pequeños)",
+      "Caldo de verduras o carne",
+      "Aceite de oliva",
+      "Sal"
+    ],
+    "pasos": [
+      "Sofríe las zanahorias y el apio en aceite unos minutos.",
+      "Añade el tomate y cocina un poco más.",
+      "Cubre con caldo y lleva a ebullición.",
+      "Agrega la pasta y cocina hasta que esté al dente.",
+      "Rectifica de sal y sirve caliente."
+    ]
+  },
+  {
+    "id": 28,
+    "nombre": "Ensalada de atún",
+    "categoria": "Ensaladas",
+    "descripcion": "Ensalada ligera con atún, huevo y verduras, perfecta como plato único rápido para 2 personas.",
+    "imagen": "https://recetinas.com/wp-content/uploads/2018/07/ensalada-de-atun-y-huevo-cocido.jpg",
+    "ingredientes": [
+      "Lechuga lavada y troceada",
+      "1 lata de atún escurrido",
+      "2 huevos duros en cuartos",
+      "1 tomate en gajos o trozos",
+      "Aceite de oliva",
+      "Sal y vinagre (opcional)"
+    ],
+    "pasos": [
+      "Coloca la lechuga en un bol o fuente.",
+      "Añade el tomate, el atún desmigado y los huevos duros.",
+      "Aliña con aceite de oliva, sal y, si quieres, un poco de vinagre.",
+      "Mezcla suavemente y sirve."
+    ]
+  },
+  {
+    "id": 29,
+    "nombre": "Mousse de chocolate",
+    "categoria": "Postres",
+    "descripcion": "Postre esponjoso y ligero de chocolate, ideal para servir bien frío. Rinde para 4 porciones.",
+    "imagen": "https://www.recetasnestlecam.com/sites/default/files/styles/recipe_detail_desktop_new/public/srh_recipes/369562012750bd46ceaeef5d59a23229.webp?itok=2J3WLLvA",
+    "ingredientes": [
+      "200g de chocolate negro",
+      "3 huevos (separando claras y yemas)",
+      "50g de azúcar"
+    ],
+    "pasos": [
+      "Derrite el chocolate al baño maría o en microondas y deja templar.",
+      "Bate las yemas con el azúcar hasta que blanqueen.",
+      "Mezcla las yemas con el chocolate fundido.",
+      "Monta las claras a punto de nieve firme.",
+      "Incorpora las claras a la mezcla de chocolate con movimientos envolventes.",
+      "Reparte en vasitos y refrigera varias horas antes de servir."
+    ]
+  },
+  {
+    "id": 30,
+    "nombre": "Croquetas de jamón",
+    "categoria": "Entrantes",
+    "descripcion": "Croquetas cremosas de bechamel con jamón serrano, crujientes por fuera y suaves por dentro. Perfectas como tapa o entrante.",
+    "imagen": "https://imag.bonviveur.com/croquetas-de-jamon-y-queso.webp",
+    "ingredientes": [
+      "Jamón serrano picado",
+      "Harina",
+      "Leche",
+      "Mantequilla",
+      "Huevos para rebozar",
+      "Pan rallado",
+      "Sal y nuez moscada (opcional)"
+    ],
+    "pasos": [
+      "Prepara una bechamel espesa con mantequilla, harina y leche, añadiendo el jamón picado al final.",
+      "Cocina la bechamel unos minutos más para que pierda el sabor a harina.",
+      "Vierte en una fuente y deja enfriar completamente en la nevera hasta que esté firme.",
+      "Forma las croquetas con ayuda de una cuchara o con las manos.",
+      "Pásalas por huevo batido y luego por pan rallado.",
+      "Fríe en abundante aceite caliente hasta que estén doradas y crujientes."
+    ]
+  }
+
+]
+

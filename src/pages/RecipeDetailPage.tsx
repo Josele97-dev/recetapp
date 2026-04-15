@@ -17,6 +17,7 @@ function RecipeDetailPage() {
   const { id } = useParams()
   const navigate = useNavigate()
   const { esFavorita, agregarFavorita, quitarFavorita } = useFavoritas()
+
   const [receta, setReceta] = useState<Receta | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -41,40 +42,73 @@ function RecipeDetailPage() {
   const favorita = esFavorita(receta.id)
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-8">
-      <button
-        onClick={() => navigate(-1)}
-        className="mb-4 text-sm text-gray-500 hover:text-gray-800"
+    <div className="min-h-screen bg-gray-100">
+
+     <header className="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white py-4 shadow-md mb-6">
+   <div className="max-w-5xl mx-auto px-4 flex items-center">
+     <button
+       onClick={() => navigate(-1)}
+       className="
+         flex items-center gap-2
+          bg-white backdrop-blur-sm
+          px-4 py-2 rounded-full
+          text-black font-medium
+          shadow hover:bg-white/30 transition
+        "
       >
-        ← Volver
+       <span className="text-xl">←</span> Volver
       </button>
+    </div>
+  </header>
 
-      <img src={receta.imagen} alt={receta.nombre} className="w-full h-64 object-cover rounded-xl mb-6" />
 
-      <div className="flex justify-between items-center mb-2">
-        <h1 className="text-2xl font-bold">{receta.nombre}</h1>
-        <FavoriteButton
-          esFavorita={favorita}
-          onClick={() => favorita ? quitarFavorita(receta.id) : agregarFavorita(receta.id)}
+      <div className="max-w-5xl mx-auto px-4 pb-10 bg-white shadow-md rounded-xl p-6">
+
+        <img
+          src={receta.imagen}
+          alt={receta.nombre}
+          className="w-full max-h-72 object-cover rounded-xl shadow mb-6"
         />
+
+        <div className="flex justify-between items-center mb-2">
+          <h1 className="text-3xl font-bold text-gray-800">{receta.nombre}</h1>
+
+          <FavoriteButton
+            esFavorita={favorita}
+            onClick={() =>
+              favorita
+                ? quitarFavorita(receta.id)
+                : agregarFavorita(receta.id)
+            }
+          />
+        </div>
+
+        <span className="inline-block bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+          {receta.categoria}
+        </span>
+
+        <p className="text-gray-700 mt-3 mb-8 text-lg leading-relaxed">
+          {receta.descripcion}
+        </p>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-3">Ingredientes</h2>
+          <ul className="list-disc list-inside space-y-1 text-gray-700">
+            {receta.ingredientes.map((ing, i) => (
+              <li key={i}>{ing}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold text-gray-800 mb-3">Pasos</h2>
+          <ol className="list-decimal list-inside space-y-3 text-gray-700 leading-relaxed">
+            {receta.pasos.map((paso, i) => (
+              <li key={i}>{paso}</li>
+            ))}
+          </ol>
+        </section>
       </div>
-
-      <span className="text-xs text-white bg-orange-400 rounded-full px-2 py-1">{receta.categoria}</span>
-      <p className="text-gray-500 mt-3 mb-6">{receta.descripcion}</p>
-
-      <h2 className="text-lg font-semibold mb-2">Ingredientes</h2>
-      <ul className="list-disc list-inside mb-6 text-gray-700">
-        {receta.ingredientes.map((ing, i) => (
-          <li key={i}>{ing}</li>
-        ))}
-      </ul>
-
-      <h2 className="text-lg font-semibold mb-2">Pasos</h2>
-      <ol className="list-decimal list-inside text-gray-700 space-y-2">
-        {receta.pasos.map((paso, i) => (
-          <li key={i}>{paso}</li>
-        ))}
-      </ol>
     </div>
   )
 }
