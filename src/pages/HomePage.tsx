@@ -2,10 +2,13 @@ import RecipeCard from '../components/RecipeCard'
 import FilterBar from '../components/FilterBar'
 import SearchBar from '../components/SearchBar'
 import useRecetas from '../hooks/useRecetas'
+import { useNavigate } from "react-router-dom"
 
 const CATEGORIAS = ['Postres', 'Entrantes', 'Carnes', 'Pasta', 'Ensaladas', 'Sopas']
 
 function HomePage() {
+  const navigate = useNavigate()
+
   const {
     recetas,
     loading,
@@ -43,7 +46,7 @@ function HomePage() {
   const irARecetaAleatoria = () => {
     const r = recetaAleatoria()
     if (!r) return
-    window.location.href = `/receta/${r.id}`
+    navigate(`/receta/${r.id}`)
   }
 
   return (
@@ -58,7 +61,6 @@ function HomePage() {
          Encuentra recetas rápidas, fáciles y deliciosas
         </p>
       </header>
-
 
       <div className="max-w-7xl mx-auto px-4 py-6">
 
