@@ -38,11 +38,11 @@
 
 ## Dónde se persisten los datos
 
-**En el servidor:**
+### En el servidor:
 - Las recetas (servidas desde `recetas.json`)
 - Las recetas favoritas guardadas
 
-**En el cliente:**
+### En el cliente:
 - El filtro seleccionado actualmente
 - El texto del buscador
 - El estado de carga (loading, error, éxito)
@@ -65,3 +65,103 @@ recetas.json / favoritas.json
 ```
 
 El usuario interactúa con el frontend. El frontend hace peticiones a la API de Express. La API lee o escribe los datos en los archivos JSON y devuelve la respuesta al frontend, que actualiza la interfaz.
+
+---
+
+# Capa de Red (API Client)
+
+La aplicación utiliza una capa de red centralizada en `src/api/client.ts`.
+
+- Tipado estricto de los datos
+- Manejo consistente de errores
+- Separación entre lógica de red y UI
+- API como única fuente de verdad
+
+---
+
+## Base URL
+
+```ts
+const API_BASE_URL = 'http://localhost:3000/api/v1'
+```
+
+---
+
+## Tipo Receta
+
+```ts
+export interface Receta {
+  id: number
+  nombre: string
+  descripcion: string
+  categoria: string
+  imagen: string
+  ingredientes: string[]
+  pasos: string[]
+}
+```
+
+---
+
+## Cliente de API
+
+```ts
+export async function fetchRecetas() {
+  const res = await fetch(`${API_BASE_URL}/recetas`)
+  if (!res.ok) throw new Error('Error al cargar las recetas')
+  return res.json()
+}
+
+export async function fetchRecetaById(id) {
+  const res = await fetch(`${API_BASE_URL}/recetas/${id}`)
+  if (!res.ok) throw new Error('No se pudo cargar la receta')
+  return res.json()
+}
+
+export async function fetchRecetasPorCategoria(categoria) {
+  const res = await fetch(`${API_BASE_URL}/recetas?categoria=${encodeURIComponent(categoria)}`)
+  if (!res.ok) throw new Error('Error al filtrar recetas')
+  return res.json()
+}
+
+export async function fetchFavoritas() {
+  const res = await fetch(`${API_BASE_URL}/favoritas`)
+  if (!res.ok) throw new Error('Error al cargar favoritas')
+  return res.json()
+}
+
+export async function addFavorita(id) {
+  const res = await fetch(`${API_BASE_URL}/favoritas/${id}`, { method: 'POST' })
+  if (!res.ok) throw new Error('No se pudo añadir')
+}
+
+export async function removeFavorita(id) {
+  const res = await fetch(`${API_BASE_URL}/favoritas/${id}`, { method: 'DELETE' })
+  if (!res.ok) throw new Error('No se pudo eliminar')
+}
+```
+
+---
+
+## Estados en la UI
+
+```tsx
+if (loading) return <p>Cargando recetas...</p>
+
+if (error) {
+  return (
+    <div>
+      <p>Error: {error}</p>
+      <button onClick={() => window.location.reload()}>Reintentar</button>
+    </div>
+  )
+}
+
+return (
+  <div>
+    {recetas.map((r) => (
+      <RecipeCard key={r.id} receta={r} />
+    ))}
+  </div>
+)
+```

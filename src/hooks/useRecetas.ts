@@ -1,15 +1,7 @@
 import { useState, useEffect, useMemo, useCallback } from 'react'
 import { useFavoritas } from '../context/FavoritasContext'
-
-interface Receta {
-  id: number
-  nombre: string
-  descripcion: string
-  imagen: string
-  categoria: string
-  ingredientes: string[]
-  pasos: string[]
-}
+import { fetchRecetas } from '../api/client'
+import type { Receta } from '../types'
 
 function useRecetas() {
   const [recetas, setRecetas] = useState<Receta[]>([])
@@ -18,20 +10,21 @@ function useRecetas() {
 
   const [categoria, setCategoria] = useState('Todas')
   const [busqueda, setBusqueda] = useState('')
-  const [orden, setOrden] = useState<"az" | "za" | "none">("none")
+  const [orden, setOrden] = useState<'az' | 'za' | 'none'>('none')
   const [mostrarFavoritas, setMostrarFavoritas] = useState(false)
 
   const { esFavorita } = useFavoritas()
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/v1/recetas?t=' + Date.now())
-      .then((res) => res.json())
+    setLoading(true)
+    setError(null)
+    fetchRecetas()
       .then((data) => {
         setRecetas(data)
         setLoading(false)
       })
-      .catch(() => {
-        setError('Error al cargar las recetas')
+      .catch((err: Error) => {
+        setError(err.message)
         setLoading(false)
       })
   }, [])

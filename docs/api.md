@@ -11,11 +11,15 @@ http://localhost:3000/api/v1
 ## Recetas
 
 ### GET /recetas
-Devuelve todas las recetas.
+Devuelve todas las recetas o filtradas por categoría.
+
+**Query params:**
+- `categoria` (opcional)
 
 **Request:**
 ```
 GET /api/v1/recetas
+GET /api/v1/recetas?categoria=Postres
 ```
 
 **Response 200:**
@@ -33,26 +37,11 @@ GET /api/v1/recetas
 ]
 ```
 
----
-
-### GET /recetas?categoria=Postres
-Devuelve las recetas filtradas por categoría.
-
-**Request:**
-```
-GET /api/v1/recetas?categoria=Postres
-```
-
-**Response 200:**
+**Response 500:**
 ```json
-[
-  {
-    "id": 1,
-    "nombre": "Brownie de chocolate",
-    "categoria": "Postres",
-    ...
-  }
-]
+{
+  "error": "Error al obtener las recetas"
+}
 ```
 
 ---
@@ -78,10 +67,24 @@ GET /api/v1/recetas/1
 }
 ```
 
+**Response 400:**
+```json
+{
+  "error": "ID inválido"
+}
+```
+
 **Response 404:**
 ```json
 {
   "error": "Receta no encontrada"
+}
+```
+
+**Response 500:**
+```json
+{
+  "error": "Error al obtener la receta"
 }
 ```
 
@@ -90,7 +93,7 @@ GET /api/v1/recetas/1
 ## Favoritas
 
 ### GET /favoritas
-Devuelve los ids de las recetas favoritas.
+Devuelve los IDs de las recetas favoritas.
 
 **Request:**
 ```
@@ -100,6 +103,13 @@ GET /api/v1/favoritas
 **Response 200:**
 ```json
 [1, 3, 7]
+```
+
+**Response 500:**
+```json
+{
+  "error": "Error al obtener favoritas"
+}
 ```
 
 ---
@@ -117,6 +127,27 @@ POST /api/v1/favoritas/1
 [1]
 ```
 
+**Response 400:**
+```json
+{
+  "error": "ID inválido"
+}
+```
+
+**Response 404:**
+```json
+{
+  "error": "Receta no encontrada"
+}
+```
+
+**Response 500:**
+```json
+{
+  "error": "Error al agregar favorita"
+}
+```
+
 ---
 
 ### DELETE /favoritas/:id
@@ -130,4 +161,18 @@ DELETE /api/v1/favoritas/1
 **Response 200:**
 ```json
 []
+```
+
+**Response 400:**
+```json
+{
+  "error": "ID inválido"
+}
+```
+
+**Response 500:**
+```json
+{
+  "error": "Error al eliminar favorita"
+}
 ```

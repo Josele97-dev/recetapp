@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 
-//const recetasPath = path.join(__dirname, '../config/recetas.json');
 const recetasPath = path.join(process.cwd(), '../data/recetas.json');
 
 

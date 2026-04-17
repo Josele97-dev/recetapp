@@ -1,4 +1,5 @@
-import { createContext, useState, useCallback, useContext } from 'react'
+import { createContext, useState, useCallback, useContext, useEffect } from 'react'
+import { fetchFavoritas, addFavorita, removeFavorita } from '../api/client'
 
 interface FavoritasContextType {
   favoritas: number[]
@@ -12,12 +13,16 @@ const FavoritasContext = createContext<FavoritasContextType | null>(null)
 function FavoritasProvider({ children }: { children: React.ReactNode }) {
   const [favoritas, setFavoritas] = useState<number[]>([])
 
+  useEffect(() => {
+    fetchFavoritas().then(setFavoritas).catch(() => {})
+  }, [])
+
   const agregarFavorita = useCallback((id: number) => {
-    setFavoritas((prev) => [...prev, id])
+    addFavorita(id).then(setFavoritas).catch(() => {})
   }, [])
 
   const quitarFavorita = useCallback((id: number) => {
-    setFavoritas((prev) => prev.filter((f) => f !== id))
+    removeFavorita(id).then(setFavoritas).catch(() => {})
   }, [])
 
   const esFavorita = useCallback((id: number) => {

@@ -35,79 +35,114 @@ function RecipeDetailPage() {
       })
   }, [id])
 
-  if (loading) return <p className="text-center mt-10">Cargando receta...</p>
+  if (loading) return <p className="text-center mt-10 text-lg text-gray-600">Cargando receta...</p>
   if (error) return <p className="text-center mt-10 text-red-500">{error}</p>
-  if (!receta) return null
+
+  if (!receta || !receta.id) {
+    return (
+      <div className="text-center mt-16">
+        <h2 className="text-3xl font-bold text-gray-800">Receta no encontrada</h2>
+
+        <button
+          onClick={() => navigate('/')}
+          className="mt-6 bg-orange-500 text-white px-5 py-2.5 rounded-lg hover:bg-orange-600 transition shadow"
+        >
+          Volver al inicio
+        </button>
+      </div>
+    )
+  }
 
   const favorita = esFavorita(receta.id)
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200">
 
-     <header className="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white py-4 shadow-md mb-6">
-   <div className="max-w-5xl mx-auto px-4 flex items-center">
-     <button
-       onClick={() => navigate(-1)}
-       className="
-         flex items-center gap-2
-          bg-white backdrop-blur-sm
-          px-4 py-2 rounded-full
-          text-black font-medium
-          shadow hover:bg-white/30 transition
-        "
-      >
-       <span className="text-xl">←</span> Volver
-      </button>
-    </div>
-  </header>
-
-
-      <div className="max-w-5xl mx-auto px-4 pb-10 bg-white shadow-md rounded-xl p-6">
-
-        <img
-          src={receta.imagen}
-          alt={receta.nombre}
-          className="w-full max-h-72 object-cover rounded-xl shadow mb-6"
-        />
-
-        <div className="flex justify-between items-center mb-2">
-          <h1 className="text-3xl font-bold text-gray-800">{receta.nombre}</h1>
-
-          <FavoriteButton
-            esFavorita={favorita}
-            onClick={() =>
-              favorita
-                ? quitarFavorita(receta.id)
-                : agregarFavorita(receta.id)
-            }
-          />
+      {/* HEADER */}
+      <header className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 shadow-lg">
+        <div className="max-w-5xl mx-auto px-4 flex items-center">
+          <button
+            onClick={() => navigate(-1)}
+            className="flex items-center gap-2 bg-white backdrop-blur-md px-4 py-2 rounded-full text-black font-medium hover:bg-white/30 transition shadow"
+          >
+            <span className="text-xl">←</span> Volver
+          </button>
         </div>
+      </header>
 
-        <span className="inline-block bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
-          {receta.categoria}
-        </span>
+      {/* CONTENIDO */}
+      <div className="max-w-5xl mx-auto px-4 py-10">
 
-        <p className="text-gray-700 mt-3 mb-8 text-lg leading-relaxed">
-          {receta.descripcion}
-        </p>
+        <div className="bg-white shadow-xl rounded-2xl p-6 md:p-10">
 
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-3">Ingredientes</h2>
-          <ul className="list-disc list-inside space-y-1 text-gray-700">
-            {receta.ingredientes.map((ing, i) => (
-              <li key={i}>{ing}</li>
-            ))}
-          </ul>
-        </section>
+          {/* IMAGEN */}
+          <div className="overflow-hidden rounded-2xl shadow-lg mb-8">
+            <img
+              src={receta.imagen}
+              alt={receta.nombre}
+              className="w-full max-h-80 object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
 
-        <section>
-          <h2 className="text-2xl font-semibold text-gray-800 mb-3">Pasos</h2>
-          <ol className="list-decimal list-inside space-y-3 text-gray-700 leading-relaxed">
-            {receta.pasos.map((paso, i) => (
-              <li key={i}>{paso}</li>
-            ))}
-          </ol>
-        </section>
+          {/* TÍTULO + FAVORITO */}
+          <div className="flex justify-between items-center mb-4">
+            <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
+              {receta.nombre}
+            </h1>
+
+            <FavoriteButton
+              esFavorita={favorita}
+              onClick={() =>
+                favorita ? quitarFavorita(receta.id) : agregarFavorita(receta.id)
+              }
+            />
+          </div>
+
+          {/* CATEGORÍA */}
+          <span className="inline-block bg-orange-100 text-orange-700 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 shadow-sm">
+            {receta.categoria}
+          </span>
+
+          {/* DESCRIPCIÓN */}
+          <p className="text-gray-700 text-lg leading-relaxed mb-10">
+            {receta.descripcion}
+          </p>
+
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4 border-l-4 border-orange-500 pl-3">
+              Ingredientes
+            </h2>
+
+            <ul className="space-y-2">
+              {receta.ingredientes.map((ing, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="w-3 h-3 mt-1 bg-orange-500 rounded-full"></span>
+                  <span className="text-gray-700 text-base">{ing}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4 border-l-4 border-orange-500 pl-3">
+              Pasos
+            </h2>
+
+            <ol className="space-y-5">
+              {receta.pasos.map((paso, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="w-7 h-7 flex items-center justify-center bg-orange-600 text-white rounded-full text-sm font-bold shadow">
+                    {i + 1}
+                  </span>
+                  <p className="text-gray-700 leading-relaxed text-base">
+                    {paso}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </section>
+
+        </div>
       </div>
     </div>
   )
