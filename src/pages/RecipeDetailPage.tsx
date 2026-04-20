@@ -23,7 +23,7 @@ function RecipeDetailPage() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/v1/recetas/${id}`)
+    fetch(`${import.meta.env.VITE_API_URL}/recetas/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setReceta(data)
@@ -42,7 +42,6 @@ function RecipeDetailPage() {
     return (
       <div className="text-center mt-16">
         <h2 className="text-3xl font-bold text-gray-800">Receta no encontrada</h2>
-
         <button
           onClick={() => navigate('/')}
           className="mt-6 bg-orange-500 text-white px-5 py-2.5 rounded-lg hover:bg-orange-600 transition shadow"
@@ -70,7 +69,6 @@ function RecipeDetailPage() {
       </header>
 
       <div className="max-w-5xl mx-auto px-4 py-10">
-
         <div className="bg-white shadow-xl rounded-2xl p-6 md:p-10">
 
           <div className="overflow-hidden rounded-2xl shadow-lg mb-8">
@@ -85,7 +83,6 @@ function RecipeDetailPage() {
             <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
               {receta.nombre}
             </h1>
-
             <FavoriteButton
               esFavorita={favorita}
               onClick={() =>
@@ -106,7 +103,6 @@ function RecipeDetailPage() {
             <h2 className="text-2xl font-bold text-gray-800 mb-4 border-l-4 border-orange-500 pl-3">
               Ingredientes
             </h2>
-
             <ul className="space-y-2">
               {receta.ingredientes.map((ing, i) => (
                 <li key={i} className="flex items-start gap-3">
@@ -121,16 +117,13 @@ function RecipeDetailPage() {
             <h2 className="text-2xl font-bold text-gray-800 mb-4 border-l-4 border-orange-500 pl-3">
               Pasos
             </h2>
-
             <ol className="space-y-5">
               {receta.pasos.map((paso, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span className="w-7 h-7 flex items-center justify-center bg-orange-600 text-white rounded-full text-sm font-bold shadow">
                     {i + 1}
                   </span>
-                  <p className="text-gray-700 leading-relaxed text-base">
-                    {paso}
-                  </p>
+                  <p className="text-gray-700 leading-relaxed text-base">{paso}</p>
                 </li>
               ))}
             </ol>
