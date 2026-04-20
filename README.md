@@ -153,9 +153,6 @@ Corazón relleno/vacío según si la receta está en favoritas.
 ```
 RECETAPP/
 │
-├── data/
-│   └── recetas.json
-│
 ├── dist/
 │
 ├── docs/
@@ -169,34 +166,62 @@ RECETAPP/
 │   ├── hooks.md
 │   ├── idea.md
 │   ├── project-management.md
+│   ├── retrospective.md
 │   ├── routing.md
 │   └── testing.md
 │
 ├── public/
 │
 ├── server/
+│   ├── data/
+│   │   └── recetas.json
 │   ├── src/
 │   │   ├── config/
 │   │   ├── controllers/
+│   │   │   ├── favoritas.controller.ts
+│   │   │   └── recetas.controller.ts
 │   │   ├── routes/
+│   │   │   ├── favoritas.routes.ts
+│   │   │   └── recetas.routes.ts
 │   │   ├── services/
-│   │   ├── index.ts
-│   │   ├── package.json
-│   │   └── tsconfig.json
+│   │   │   ├── favoritas.service.ts
+│   │   │   └── recetas.service.ts
+│   │   └── index.ts
+│   ├── package-lock.json
+│   ├── package.json
+│   └── tsconfig.json
 │
 ├── src/
 │   ├── api/
+│   │   └── client.ts
 │   ├── components/
+│   │   ├── FavoriteButton.tsx
+│   │   ├── FilterBar.tsx
+│   │   ├── RecipeCard.tsx
+│   │   └── SearchBar.tsx
 │   ├── context/
+│   │   └── FavoritasContext.tsx
 │   ├── hooks/
+│   │   └── useRecetas.ts
 │   ├── pages/
+│   │   ├── HomePage.tsx
+│   │   ├── NotFoundPage.tsx
+│   │   └── RecipeDetailPage.tsx
 │   ├── types/
+│   │   └── index.ts
 │   ├── App.tsx
 │   ├── index.css
 │   └── main.tsx
 │
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
 ├── package.json
+├── README.md
+├── tsconfig.app.json
 ├── tsconfig.json
+├── tsconfig.node.json
 └── vite.config.ts
 ```
 
@@ -205,25 +230,45 @@ RECETAPP/
 ## Instalación y Ejecución
 
 ### Frontend
+
+1. Instala las dependencias:
 ```bash
 npm install
+```
+
+2. Crea el archivo `.env.local` en la raíz del proyecto con el siguiente contenido: 
+
+```
+VITE_API_URL=http://localhost:3000/api/v1
+```
+
+> Este archivo no se incluye en el repositorio por seguridad.
+
+3. Arranca el servidor de desarrollo:
+```bash
 npm run dev
 ```
+
+Frontend disponible en `http://localhost:5173`
 
 ### Backend
+
+1. Entra en la carpeta del servidor:
 ```bash
 cd server
+```
+
+2. Instala las dependencias:
+```bash
 npm install
+```
+
+3. Arranca el servidor:
+```bash
 npm run dev
 ```
 
-Backend en:
-
-```
-http://localhost:3000
-```
-
----
+Backend disponible en `http://localhost:3000`
 
 ## Deploy
 
