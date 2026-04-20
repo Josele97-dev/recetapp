@@ -73,10 +73,10 @@ function useRecetas() {
     setOrden((prev) => (prev === 'az' ? 'za' : 'az'))
   }, [])
 
-  const recetaAleatoria = () => {
+  const recetaAleatoria = useCallback(() => {
     if (recetas.length === 0) return null
     return recetas[Math.floor(Math.random() * recetas.length)]
-  }
+  }, [recetas])
 
   return {
     recetas: recetasFiltradas,
