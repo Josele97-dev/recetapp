@@ -58,7 +58,6 @@ function RecipeDetailPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200">
 
-      {/* HEADER */}
       <header className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 shadow-lg">
         <div className="max-w-5xl mx-auto px-4 flex items-center">
           <button
@@ -70,12 +69,10 @@ function RecipeDetailPage() {
         </div>
       </header>
 
-      {/* CONTENIDO */}
       <div className="max-w-5xl mx-auto px-4 py-10">
 
         <div className="bg-white shadow-xl rounded-2xl p-6 md:p-10">
 
-          {/* IMAGEN */}
           <div className="overflow-hidden rounded-2xl shadow-lg mb-8">
             <img
               src={receta.imagen}
@@ -84,7 +81,6 @@ function RecipeDetailPage() {
             />
           </div>
 
-          {/* TÍTULO + FAVORITO */}
           <div className="flex justify-between items-center mb-4">
             <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
               {receta.nombre}
@@ -98,12 +94,10 @@ function RecipeDetailPage() {
             />
           </div>
 
-          {/* CATEGORÍA */}
           <span className="inline-block bg-orange-100 text-orange-700 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 shadow-sm">
             {receta.categoria}
           </span>
 
-          {/* DESCRIPCIÓN */}
           <p className="text-gray-700 text-lg leading-relaxed mb-10">
             {receta.descripcion}
           </p>

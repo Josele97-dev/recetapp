@@ -34,7 +34,6 @@ Cualquier persona que cocine y quiera inspirarse con recetas de forma rápida y 
 ## Funcionalidades opcionales
 
 - Página de favoritas vacía con mensaje cuando no hay ninguna guardada
-- Animación al añadir o quitar de favoritas
 - Botón de ordenar recetas por orden alfabético
 - Botón receta aleatoria
 

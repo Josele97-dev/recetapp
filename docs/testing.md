@@ -53,5 +53,3 @@ Este documento recoge las pruebas básicas realizadas para comprobar que la apli
 - Las recetas se leen desde `recetas.json`.
 - Las favoritas se almacenan en memoria del backend mientras está en ejecución.
 - No hay persistencia real (se pierden al reiniciar el servidor).
-
----

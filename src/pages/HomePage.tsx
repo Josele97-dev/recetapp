@@ -52,7 +52,6 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-gray-100 py-4 px-3">
 
-      {/* HEADER */}
       <header className="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white py-5 shadow-md">
         <h1 className="text-5xl font-extrabold text-center tracking-tight drop-shadow">
          RecetApp
@@ -64,14 +63,12 @@ function HomePage() {
 
       <div className="max-w-7xl mx-auto px-4 py-6">
 
-        {/* BARRA SUPERIOR */}
         <div className="mb-6 flex justify-between items-center">
 
           <SearchBar valor={busqueda} onChange={handleBusquedaChange} />
 
           <div className="flex items-center">
 
-            {/* FAVORITAS */}
             <button
               onClick={toggleFavoritas}
               className={`
@@ -84,7 +81,6 @@ function HomePage() {
               Favoritas ❤️
             </button>
 
-            {/* ORDEN */}
             <button
               onClick={toggleOrden}
               className="
@@ -96,7 +92,6 @@ function HomePage() {
               {orden === "az" ? "Orden: Z–A" : "Orden: A–Z"}
             </button>
 
-            {/* ALEATORIA */}
             <button
               onClick={irARecetaAleatoria}
               className="
@@ -113,7 +108,6 @@ function HomePage() {
           </div>
         </div>
 
-        {/* FILTROS */}
         <div className="mb-8">
           <FilterBar
             categorias={CATEGORIAS}
@@ -122,7 +116,6 @@ function HomePage() {
           />
         </div>
 
-        {/* SI FAVORITAS ESTÁ ACTIVADO Y NO HAY NINGUNA */}
         {mostrarFavoritas && recetas.length === 0 && (
           <div className="text-center py-16 bg-white rounded-xl shadow-md">
             <h2 className="text-2xl font-bold text-gray-800 mb-3">
@@ -142,7 +135,6 @@ function HomePage() {
           </div>
         )}
 
-        {/* GRID DE RECETAS */}
         {!mostrarFavoritas || recetas.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {recetas.map((receta) => (
@@ -160,7 +152,6 @@ function HomePage() {
 
       </div>
 
-      {/* FOOTER */}
       <footer className="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white py-6 mt-10">
         <div className="max-w-7xl mx-auto text-center px-4">
           <p className="text-sm opacity-90">
