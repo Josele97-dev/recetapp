@@ -1,6 +1,6 @@
 interface Props {
   esFavorita: boolean
-  onClick: () => void
+  onClick: (e: React.MouseEvent) => void
 }
 
 function FavoriteButton({ esFavorita, onClick }: Props) {

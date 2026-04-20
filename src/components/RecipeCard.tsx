@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useFavoritas } from '../context/FavoritasContext'
+import FavoriteButton from './FavoriteButton'
 
 interface Props {
   id: number
@@ -21,16 +22,9 @@ function RecipeCard({ id, nombre, descripcion, imagen, categoria }: Props) {
   return (
     <div className="rounded-xl overflow-hidden shadow-md bg-white hover:shadow-lg transition-shadow relative flex flex-col">
 
-      <button
-        onClick={toggleFavorita}
-        className="absolute top-2 right-2 text-2xl z-10 hover:scale-110 transition"
-      >
-        {favorita ? (
-          <span className="text-red-500">❤️</span>
-        ) : (
-          <span className="text-gray-300">🤍</span>
-        )}
-      </button>
+      <div className="absolute top-2 right-2 z-10">
+        <FavoriteButton esFavorita={favorita} onClick={toggleFavorita} />
+      </div>
 
       <img src={imagen} alt={nombre} className="w-full h-48 object-cover" />
 
