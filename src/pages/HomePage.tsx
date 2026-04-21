@@ -26,7 +26,12 @@ function HomePage() {
   } = useRecetas()
 
   if (loading) {
-    return <p className="text-center mt-10">Cargando recetas...</p>
+    return (
+      <div className="flex flex-col items-center justify-center mt-20 gap-3">
+        <span className="text-5xl animate-spin">⏳</span>
+        <p className="text-gray-600 text-lg font-medium">Cargando recetas...</p>
+      </div>
+    )
   }
 
   if (error) {
@@ -123,11 +128,9 @@ function HomePage() {
             <h2 className="text-2xl font-bold text-gray-800 mb-3">
               No tienes recetas favoritas aún
             </h2>
-
             <p className="text-gray-600 mb-6">
               Marca recetas como favoritas para verlas aquí
             </p>
-
             <button
               onClick={toggleFavoritas}
               className="px-5 py-2 bg-orange-500 text-white rounded-lg shadow hover:bg-orange-600 transition"

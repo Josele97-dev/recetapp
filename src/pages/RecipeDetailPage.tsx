@@ -35,7 +35,13 @@ function RecipeDetailPage() {
       })
   }, [id])
 
-  if (loading) return <p className="text-center mt-10 text-lg text-gray-600">Cargando receta...</p>
+  if (loading) return (
+    <div className="flex flex-col items-center justify-center mt-20 gap-3">
+      <span className="text-5xl animate-spin">⏳</span>
+      <p className="text-gray-600 text-lg font-medium">Cargando receta...</p>
+    </div>
+  )
+
   if (error) return <p className="text-center mt-10 text-red-500">{error}</p>
 
   if (!receta || !receta.id) {
