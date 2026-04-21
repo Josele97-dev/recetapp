@@ -69,7 +69,6 @@ function HomePage() {
 
           <div className="flex items-center">
 
-            {/* FAVORITAS */}
             <button
               onClick={toggleFavoritas}
               className={`
@@ -82,7 +81,6 @@ function HomePage() {
               Favoritas ❤️
             </button>
 
-            {/* ORDENAR */}
             <button
               onClick={toggleOrden}
               className="
@@ -96,7 +94,6 @@ function HomePage() {
               {orden === "za" && "Z‑A 🔽"}
             </button>
 
-            {/* ALEATORIA */}
             <button
               onClick={irARecetaAleatoria}
               className="
