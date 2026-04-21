@@ -40,19 +40,21 @@ function RecipeDetailPage() {
 
   if (error) return <p className="text-center mt-10 text-red-500">{error}</p>
 
-  if (!receta || !receta.id) {
-    return (
-      <div className="text-center mt-16">
-        <h2 className="text-3xl font-bold text-gray-800">Receta no encontrada</h2>
-        <button
-          onClick={() => navigate('/')}
-          className="mt-6 bg-orange-500 text-white px-5 py-2.5 rounded-lg hover:bg-orange-600 transition shadow"
-        >
-          Volver al inicio
-        </button>
-      </div>
-    )
-  }
+if (!receta || !receta.id) {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 flex flex-col items-center justify-center text-center px-4">
+      <span className="text-8xl mb-6">🍽️</span>
+      <h2 className="text-3xl font-bold text-gray-800 mb-2">Receta no encontrada</h2>
+      <p className="text-gray-500 mb-8">La receta que buscas no existe o ha sido eliminada.</p>
+      <button
+        onClick={() => navigate('/')}
+        className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition shadow cursor-pointer font-semibold"
+      >
+        Volver al inicio
+      </button>
+    </div>
+  )
+}
 
   const favorita = esFavorita(receta.id)
 
@@ -61,12 +63,12 @@ function RecipeDetailPage() {
 
       <header className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 shadow-lg">
         <div className="max-w-5xl mx-auto px-4 flex items-center">
-          <button
-            onClick={() => navigate(-1)}
-            className="flex items-center gap-2 bg-white backdrop-blur-md px-4 py-2 rounded-full text-black font-medium hover:bg-white/30 transition shadow"
-          >
-            <span className="text-xl">←</span> Volver
-          </button>
+        <button
+          onClick={() => navigate(-1)}
+          className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-white font-medium hover:bg-white/30 transition shadow cursor-pointer"
+  >
+          <span className="text-xl">←</span> Volver
+        </button>
         </div>
       </header>
 
