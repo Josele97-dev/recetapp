@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useFavoritas } from '../context/FavoritasContext'
 import FavoriteButton from '../components/FavoriteButton'
+import RecipeDetailSkeleton from '../components/RecipeDetailSkeleton'
 
 interface Receta {
   id: number
@@ -35,12 +36,7 @@ function RecipeDetailPage() {
       })
   }, [id])
 
-  if (loading) return (
-    <div className="flex flex-col items-center justify-center mt-20 gap-3">
-      <span className="text-5xl animate-spin">⏳</span>
-      <p className="text-gray-600 text-lg font-medium">Cargando receta...</p>
-    </div>
-  )
+  if (loading) return <RecipeDetailSkeleton />
 
   if (error) return <p className="text-center mt-10 text-red-500">{error}</p>
 

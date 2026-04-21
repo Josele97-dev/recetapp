@@ -1,6 +1,7 @@
 import RecipeCard from '../components/RecipeCard'
 import FilterBar from '../components/FilterBar'
 import SearchBar from '../components/SearchBar'
+import RecipeSkeleton from '../components/RecipeSkeleton'
 import useRecetas from '../hooks/useRecetas'
 import { useNavigate } from "react-router-dom"
 
@@ -27,9 +28,22 @@ function HomePage() {
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center mt-20 gap-3">
-        <span className="text-5xl animate-spin">⏳</span>
-        <p className="text-gray-600 text-lg font-medium">Cargando recetas...</p>
+      <div className="min-h-screen bg-gray-100 py-4 px-3">
+        <header className="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white py-5 shadow-md">
+          <h1 className="text-5xl font-extrabold text-center tracking-tight drop-shadow">
+            RecetApp
+          </h1>
+          <p className="text-center text-white/90 text-lg mt-2">
+            Encuentra recetas rápidas, fáciles y deliciosas
+          </p>
+        </header>
+        <div className="max-w-7xl mx-auto px-4 py-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <RecipeSkeleton key={i} />
+            ))}
+          </div>
+        </div>
       </div>
     )
   }

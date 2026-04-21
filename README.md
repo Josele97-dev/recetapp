@@ -194,11 +194,13 @@ RECETAPP/
 ├── src/
 │   ├── api/
 │   │   └── client.ts
-│   ├── components/
-│   │   ├── FavoriteButton.tsx
-│   │   ├── FilterBar.tsx
-│   │   ├── RecipeCard.tsx
-│   │   └── SearchBar.tsx
+├── components/
+│   ├── FavoriteButton.tsx
+│   ├── FilterBar.tsx
+│   ├── RecipeCard.tsx
+│   ├── RecipeDetailSkeleton.tsx
+│   ├── RecipeSkeleton.tsx
+│   └── SearchBar.tsx
 │   ├── context/
 │   │   └── FavoritasContext.tsx
 │   ├── hooks/
