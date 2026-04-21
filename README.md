@@ -4,7 +4,7 @@ RecetApp es una aplicación web moderna diseñada para descubrir recetas de coci
 
 El objetivo principal es ofrecer una experiencia fluida, accesible y visualmente atractiva para cualquier usuario que quiera explorar recetas de manera sencilla.
 
-## 🌐 URLs del Proyecto
+## URLs del Proyecto
 
 **Frontend (Vercel)**  
 https://recetapp-rho.vercel.app
@@ -18,7 +18,7 @@ Ambos servicios se comunican mediante la variable de entorno:
 VITE_API_URL
 ```
 
-## 🎯 Objetivo del Proyecto
+## Objetivo del Proyecto
 
 El propósito de RecetApp es proporcionar una plataforma intuitiva para:
 
@@ -31,11 +31,11 @@ El propósito de RecetApp es proporcionar una plataforma intuitiva para:
 
 La aplicación está pensada para ser rápida, ligera y fácil de usar tanto en móvil como en escritorio.
 
-## 🏗️ Arquitectura General
+## Arquitectura General
 
 El proyecto está dividido en dos capas principales:
 
-### 🖥️ Frontend (React + TypeScript + Vite)
+### Frontend (React + TypeScript + Vite)
 
 El frontend se encarga de la interfaz de usuario, navegación, estado global y comunicación con la API.
 
@@ -94,7 +94,7 @@ src/api/client.ts
 
 ---
 
-### 🧩 Backend (Node.js + Express + TypeScript)
+### Backend (Node.js + Express + TypeScript)
 
 El backend expone una API REST que sirve recetas y gestiona favoritas.
 
@@ -116,7 +116,7 @@ Se almacenan en memoria del servidor (suficiente para un proyecto académico).
 
 ---
 
-## 📡 Endpoints Principales de la API
+## Endpoints Principales de la API
 
 | Método | Endpoint | Descripción |
 |--------|----------|-------------|
@@ -145,7 +145,7 @@ Se almacenan en memoria del servidor (suficiente para un proyecto académico).
 
 ---
 
-## 🧠 Gestión del Estado
+## Gestión del Estado
 
 ### Context API (Favoritas)
 
@@ -175,7 +175,7 @@ Se sincroniza automáticamente con el backend.
 
 ---
 
-## 🧭 Rutas y Navegación
+## Rutas y Navegación
 
 | Ruta | Página | Descripción |
 |------|--------|-------------|
@@ -185,7 +185,7 @@ Se sincroniza automáticamente con el backend.
 
 ---
 
-## 🧩 Componentes Principales
+## Componentes Principales
 
 - **RecipeCard** → Tarjeta visual con imagen, nombre, categoría y botón de favoritas.
 - **FilterBar** → Botones para filtrar por categoría o favoritas.
@@ -198,7 +198,7 @@ Se sincroniza automáticamente con el backend.
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Interfaz
 - Carga de recetas
@@ -225,7 +225,7 @@ Se sincroniza automáticamente con el backend.
 
 ---
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 RECETAPP/
@@ -240,7 +240,7 @@ RECETAPP/
 
 ---
 
-## 🚀 Instalación y Ejecución
+## Instalación y Ejecución
 
 ### Frontend
 
@@ -270,7 +270,7 @@ npm run dev
 
 ---
 
-## ☁️ Deploy
+## Deploy
 
 ### Frontend
 Desplegado en Vercel.
@@ -280,24 +280,25 @@ Desplegado en Railway, con CORS habilitado.
 
 ---
 
-## 📚 Documentación Completa (en /docs)
+## Documentación Completa (en /docs)
 
-- Metodologías (Agile, Scrum, Kanban)
-- API REST
-- Componentes
-- Context y estado global
-- Despliegue
-- Arquitectura y diseño
-- Formularios
-- Hooks
-- Idea del proyecto
-- Gestión del proyecto
-- Retrospectiva
-- Routing
-- Testing
+- [Metodologías (Agile, Scrum, Kanban)](docs/agile.md)
+- [API REST](docs/api.md)
+- [Componentes](docs/components.md)
+- [Context y estado global](docs/context.md)
+- [Despliegue](docs/deployment.md)
+- [Arquitectura y diseño](docs/design.md)
+- [Formularios](docs/forms.md)
+- [Hooks](docs/hooks.md)
+- [Idea del proyecto](docs/idea.md)
+- [Gestión del proyecto](docs/project-management.md)
+- [Retrospectiva](docs/retrospective.md)
+- [Routing](docs/routing.md)
+- [Testing](docs/testing.md)
+
 
 ---
 
-## 📄 Licencia
+## Licencia
 
 Proyecto académico / educativo.

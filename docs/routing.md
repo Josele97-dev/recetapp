@@ -1,8 +1,8 @@
-# 🧭 Rutas y navegación
+# Rutas y navegación
 
 ------------------------------------------------------------------------
 
-## ⚙️ Configuración
+## Configuración
 
 Las rutas están configuradas en `src/App.tsx` usando **React Router
 v6**.\
@@ -13,7 +13,7 @@ Además, la navegación programática se realiza con `useNavigate`.
 
 ------------------------------------------------------------------------
 
-## 🗺️ Estructura de rutas
+## Estructura de rutas
 
   -----------------------------------------------------------------------
   Ruta             Página                Descripción
@@ -31,9 +31,9 @@ Esta estructura coincide con tu `App.tsx` actual.
 
 ------------------------------------------------------------------------
 
-## 🔀 Navegación entre páginas
+## Navegación entre páginas
 
-### ➡️ Desde HomePage → RecipeDetailPage
+### Desde HomePage → RecipeDetailPage
 
 Cuando el usuario hace click en el botón **"Ver receta"** dentro de una
 `RecipeCard`, se navega a:
@@ -50,7 +50,7 @@ navigate(`/receta/${id}`)
 
 ------------------------------------------------------------------------
 
-### ⬅️ Desde RecipeDetailPage → atrás
+### Desde RecipeDetailPage → atrás
 
 En la página de detalle hay un botón **"← Volver"** que usa:
 
@@ -60,7 +60,7 @@ navigate(-1)
 
 ------------------------------------------------------------------------
 
-### 🏠 Desde NotFoundPage → inicio
+### Desde NotFoundPage → inicio
 
 El botón de la página 404 redirige a:
 
@@ -70,9 +70,9 @@ navigate('/')
 
 ------------------------------------------------------------------------
 
-## 📄 Páginas
+## Páginas
 
-### 🏡 HomePage
+### HomePage
 
 Pantalla principal de la aplicación.
 
@@ -90,7 +90,7 @@ Toda la lógica proviene del hook `useRecetas`.
 
 ------------------------------------------------------------------------
 
-### 📖 RecipeDetailPage
+### RecipeDetailPage
 
 Muestra el detalle completo de una receta:
 
@@ -113,7 +113,7 @@ Incluye un skeleton mientras carga.
 
 ------------------------------------------------------------------------
 
-### 🚫 NotFoundPage
+### NotFoundPage
 
 Página 404 que aparece cuando el usuario accede a una ruta inexistente.\
 Incluye un botón para volver al inicio.

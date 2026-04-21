@@ -1,6 +1,6 @@
-# 📝 Formularios e interacción
+# Formularios e interacción
 
-## 🔍 Buscador de recetas
+## Buscador de recetas
 
 El buscador es el formulario controlado principal de RecetApp.\
 Está implementado en el componente `SearchBar` y gestionado desde el
@@ -8,7 +8,7 @@ hook `useRecetas`.
 
 ------------------------------------------------------------------------
 
-## 🧩 Componente SearchBar
+## Componente SearchBar
 
 ``` tsx
 interface Props {
@@ -31,7 +31,7 @@ function SearchBar({ valor, onChange }: Props) {
 
 ------------------------------------------------------------------------
 
-## 🧠 Gestión del estado
+## Gestión del estado
 
 El estado del input se gestiona dentro del hook `useRecetas`:
 
@@ -51,7 +51,7 @@ El hook se encarga de:
 
 ------------------------------------------------------------------------
 
-## ⚠️ Validación y mensajes
+## Validación y mensajes
 
 Si el buscador no encuentra resultados, se muestra un mensaje al
 usuario.

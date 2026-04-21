@@ -1,4 +1,4 @@
-# 🚀 Despliegue de RecetApp
+# Despliegue de RecetApp
 
 Este documento explica el proceso completo de despliegue del frontend y
 el backend de RecetApp, incluyendo configuración, variables de entorno y
@@ -6,7 +6,7 @@ pasos necesarios para publicar la aplicación en producción.
 
 ------------------------------------------------------------------------
 
-## 🌐 Despliegue del Frontend (Vercel)
+## Despliegue del Frontend (Vercel)
 
 El frontend está construido con **React + TypeScript + Vite** y se
 despliega automáticamente en Vercel.
@@ -41,7 +41,7 @@ despliegue.
 
 ------------------------------------------------------------------------
 
-## 🛠️ Despliegue del Backend (Railway)
+## Despliegue del Backend (Railway)
 
 El backend está construido con **Node.js + Express + TypeScript** y se
 despliega en Railway.
@@ -106,7 +106,7 @@ Cada vez que haces push a `main`, Railway:
 
 ------------------------------------------------------------------------
 
-## 🔗 Conexión entre Frontend y Backend
+## Conexión entre Frontend y Backend
 
 El frontend usa la variable `VITE_API_URL` para comunicarse con la API.
 
@@ -120,7 +120,7 @@ Esto permite que el frontend funcione tanto en local como en producción.
 
 ------------------------------------------------------------------------
 
-## 🧪 Comprobación en Producción
+## Comprobación en Producción
 
 ### 1. Verificar API
 
@@ -145,7 +145,7 @@ Probar:
 
 ------------------------------------------------------------------------
 
-## 📦 Resultado final
+## Resultado final
 
 Tras completar este proceso:
 

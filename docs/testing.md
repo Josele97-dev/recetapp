@@ -1,13 +1,13 @@
-# 🧪 Testing
+# Testing
 
 Este documento recoge las pruebas básicas realizadas para comprobar que
 la aplicación funciona correctamente.
 
 ------------------------------------------------------------------------
 
-## 1. 🖥️ Pruebas de interfaz
+## 1. Pruebas de interfaz
 
-### 🏡 HomePage
+### HomePage
 
 -   ✔️ Carga la lista de recetas desde la API\
 -   ✔️ Muestra buscador, filtros y orden A‑Z / Z‑A\
@@ -18,7 +18,7 @@ la aplicación funciona correctamente.
 -   ✔️ Muestra `RecipeSkeleton` mientras carga\
 -   ✔️ Al hacer clic en una receta, navega al detalle
 
-### 📖 RecipeDetailPage
+### RecipeDetailPage
 
 -   ✔️ Muestra la información completa de la receta\
 -   ✔️ Muestra `RecipeDetailSkeleton` mientras carga\
@@ -26,14 +26,14 @@ la aplicación funciona correctamente.
 -   ✔️ Botón de volver funciona correctamente\
 -   ✔️ Botón de favorita sincroniza con el backend
 
-### 🚫 NotFoundPage
+### NotFoundPage
 
 -   ✔️ Se muestra al entrar en rutas inexistentes\
 -   ✔️ Botón para volver al inicio funciona
 
 ------------------------------------------------------------------------
 
-## 2. 📱 Pruebas de responsive
+## 2. Pruebas de responsive
 
 -   ✔️ **Móvil:** tarjetas en columna, filtros accesibles, texto
     legible\
@@ -42,7 +42,7 @@ la aplicación funciona correctamente.
 
 ------------------------------------------------------------------------
 
-## 3. 🧾 Pruebas de consola
+## 3. Pruebas de consola
 
 -   ✔️ Sin errores de React\
 -   ✔️ Sin warnings de dependencias o keys\
@@ -52,7 +52,7 @@ la aplicación funciona correctamente.
 
 ------------------------------------------------------------------------
 
-## 4. 🔌 Pruebas de endpoints
+## 4. Pruebas de endpoints
 
   Método   Endpoint                            Resultado esperado           Estado
   -------- ----------------------------------- ---------------------------- --------
@@ -65,7 +65,7 @@ la aplicación funciona correctamente.
 
 ------------------------------------------------------------------------
 
-## 5. 📝 Observaciones
+## 5. Observaciones
 
 -   Las recetas se leen desde `recetas.json`\
 -   Las favoritas se almacenan en memoria del backend mientras está en

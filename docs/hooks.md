@@ -1,4 +1,4 @@
-# 🪝 Hooks
+# Hooks
 
 ------------------------------------------------------------------------
 
@@ -162,7 +162,7 @@ Hook principal que centraliza toda la lógica de la HomePage.
 
 ------------------------------------------------------------------------
 
-## 🔧 Custom Hook: useRecetaDetalle
+## Custom Hook: useRecetaDetalle
 
 Hook para cargar una receta individual en la página de detalle.
 
