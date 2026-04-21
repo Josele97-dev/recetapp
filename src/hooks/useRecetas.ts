@@ -18,6 +18,7 @@ function useRecetas() {
   useEffect(() => {
     setLoading(true)
     setError(null)
+
     fetchRecetas()
       .then((data) => {
         setRecetas(data)

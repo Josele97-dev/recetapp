@@ -1,14 +1,6 @@
 import { useEffect, useState } from 'react'
-
-interface Receta {
-  id: number
-  nombre: string
-  descripcion: string
-  imagen: string
-  categoria: string
-  ingredientes: string[]
-  pasos: string[]
-}
+import { fetchRecetaById } from '../api/client'
+import type { Receta } from '../types'
 
 export function useRecetaDetalle(id?: string) {
   const [receta, setReceta] = useState<Receta | null>(null)
@@ -21,14 +13,13 @@ export function useRecetaDetalle(id?: string) {
     setLoading(true)
     setError(null)
 
-    fetch(`${import.meta.env.VITE_API_URL}/recetas/${id}`)
-      .then((res) => res.json())
+    fetchRecetaById(Number(id))
       .then((data) => {
         setReceta(data)
         setLoading(false)
       })
-      .catch(() => {
-        setError('Error al cargar la receta')
+      .catch((err: Error) => {
+        setError(err.message)
         setLoading(false)
       })
   }, [id])

@@ -1,27 +1,42 @@
-# Hooks
+# 🪝 Hooks
+
+------------------------------------------------------------------------
 
 ## useState
 
-Se usa para gestionar estado local en los componentes y hooks. En RecetApp lo usamos para guardar las recetas, el estado de carga, los errores, la categoría activa y el texto del buscador.
+Se usa para gestionar estado local en los componentes y en los hooks
+personalizados.
 
-```ts
-const [recetas, setRecetas] = useState<Receta[]>([])
-const [loading, setLoading] = useState(true)
-const [error, setError] = useState<string | null>(null)
+En RecetApp se usa para:
+
+-   categoría activa\
+-   texto del buscador\
+-   orden A-Z / Z-A\
+-   mostrar favoritas\
+-   loading y error\
+-   receta cargada en el detalle
+
+### Ejemplo real dentro de `useRecetas`
+
+``` ts
 const [categoria, setCategoria] = useState('Todas')
 const [busqueda, setBusqueda] = useState('')
+const [orden, setOrden] = useState<'az' | 'za' | 'none'>('none')
+const [mostrarFavoritas, setMostrarFavoritas] = useState(false)
 ```
 
----
+------------------------------------------------------------------------
 
 ## useEffect
 
-Se usa para ejecutar efectos secundarios, como llamadas a la API. En RecetApp lo usamos para cargar las recetas del backend cuando el componente se monta. El array vacío `[]` al final indica que solo se ejecuta una vez.
+Se usa para ejecutar efectos secundarios, como cargar datos desde la
+API.
 
-```ts
+### En `useRecetas`
+
+``` ts
 useEffect(() => {
-  fetch('http://localhost:3000/api/v1/recetas')
-    .then((res) => res.json())
+  fetchRecetas()
     .then((data) => {
       setRecetas(data)
       setLoading(false)
@@ -33,27 +48,71 @@ useEffect(() => {
 }, [])
 ```
 
----
+### En `useRecetaDetalle`
+
+``` ts
+useEffect(() => {
+  fetchRecetaById(id)
+    .then((data) => {
+      setReceta(data)
+      setLoading(false)
+    })
+    .catch(() => {
+      setError('No se pudo cargar la receta')
+      setLoading(false)
+    })
+}, [id])
+```
+
+------------------------------------------------------------------------
 
 ## useMemo
 
-Se usa para optimizar cálculos costosos. En RecetApp lo usamos para filtrar las recetas por categoría y búsqueda. Solo recalcula cuando cambian las dependencias (`recetas`, `categoria` o `busqueda`), evitando cálculos innecesarios en cada render.
+Se usa para optimizar cálculos derivados.
 
-```ts
+En RecetApp se usa para:
+
+-   filtrar por categoría\
+-   filtrar por búsqueda\
+-   ordenar\
+-   filtrar favoritas
+
+### Ejemplo real
+
+``` ts
 const recetasFiltradas = useMemo(() => {
-  return recetas
-    .filter((r) => categoria === 'Todas' || r.categoria === categoria)
-    .filter((r) => r.nombre.toLowerCase().includes(busqueda.toLowerCase()))
-}, [recetas, categoria, busqueda])
+  let resultado = [...recetas]
+
+  if (categoria !== 'Todas') {
+    resultado = resultado.filter((r) => r.categoria === categoria)
+  }
+
+  if (busqueda.trim() !== '') {
+    resultado = resultado.filter((r) =>
+      r.nombre.toLowerCase().includes(busqueda.toLowerCase())
+    )
+  }
+
+  if (mostrarFavoritas) {
+    resultado = resultado.filter((r) => favoritas.includes(r.id))
+  }
+
+  if (orden === 'az') resultado.sort((a, b) => a.nombre.localeCompare(b.nombre))
+  if (orden === 'za') resultado.sort((a, b) => b.nombre.localeCompare(a.nombre))
+
+  return resultado
+}, [recetas, categoria, busqueda, mostrarFavoritas, orden, favoritas])
 ```
 
----
+------------------------------------------------------------------------
 
 ## useCallback
 
-Se usa para evitar que las funciones se recreen en cada render. En RecetApp lo usamos para las funciones que manejan el cambio de categoría y el buscador.
+Se usa para evitar recrear funciones en cada render.
 
-```ts
+### Ejemplos reales
+
+``` ts
 const handleCategoriaChange = useCallback((nuevaCategoria: string) => {
   setCategoria(nuevaCategoria)
 }, [])
@@ -61,26 +120,66 @@ const handleCategoriaChange = useCallback((nuevaCategoria: string) => {
 const handleBusquedaChange = useCallback((valor: string) => {
   setBusqueda(valor)
 }, [])
+
+const toggleOrden = useCallback(() => {
+  setOrden((prev) => (prev === 'az' ? 'za' : prev === 'za' ? 'none' : 'az'))
+}, [])
 ```
 
----
+------------------------------------------------------------------------
 
-## Custom Hook: useRecetas
+## 🔧 Custom Hook: useRecetas
 
-Hook reutilizable que centraliza toda la lógica de las recetas: carga, filtrado por categoría y búsqueda. Cualquier página que necesite recetas puede usarlo.
+Hook principal que centraliza toda la lógica de la HomePage.
 
-**Devuelve:**
-| Valor | Tipo | Descripción |
-|-------|------|-------------|
-| `recetas` | `Receta[]` | Recetas filtradas |
-| `loading` | `boolean` | Si están cargando |
-| `error` | `string \| null` | Error si ha fallado |
-| `categoria` | `string` | Categoría activa |
-| `busqueda` | `string` | Texto del buscador |
-| `handleCategoriaChange` | `function` | Cambia la categoría |
-| `handleBusquedaChange` | `function` | Cambia la búsqueda |
+### Incluye:
 
-**Uso:**
-```tsx
-const { recetas, loading, error, categoria, busqueda, handleCategoriaChange, handleBusquedaChange } = useRecetas()
-```
+-   carga de recetas\
+-   loading y error\
+-   filtro por categoría\
+-   búsqueda\
+-   orden A-Z / Z-A\
+-   filtro de favoritas\
+-   receta aleatoria\
+-   funciones para actualizar cada estado
+
+### Devuelve:
+
+  Valor                   Tipo                     Descripción
+  ----------------------- ------------------------ --------------------------------------
+  recetas                 Receta\[\]               Recetas filtradas y ordenadas
+  loading                 boolean                  Estado de carga
+  error                   string \| null           Error si falla la API
+  categoria               string                   Categoría activa
+  busqueda                string                   Texto del buscador
+  orden                   'az' \| 'za' \| 'none'   Orden actual
+  mostrarFavoritas        boolean                  Si se muestran solo favoritas
+  handleCategoriaChange   function                 Cambia la categoría
+  handleBusquedaChange    function                 Cambia la búsqueda
+  toggleOrden             function                 Cambia el orden
+  toggleFavoritas         function                 Activa/desactiva filtro de favoritas
+  recetaAleatoria         function                 Devuelve una receta aleatoria
+
+------------------------------------------------------------------------
+
+## 🔧 Custom Hook: useRecetaDetalle
+
+Hook para cargar una receta individual en la página de detalle.
+
+### Incluye:
+
+-   carga por ID\
+-   loading\
+-   error\
+-   receta no encontrada\
+-   integración con favoritas
+
+### Devuelve:
+
+  Valor            Tipo             Descripción
+  ---------------- ---------------- --------------------------------
+  receta           Receta \| null   Receta cargada
+  loading          boolean          Estado de carga
+  error            string \| null   Error si falla la API
+  esFavorita       boolean          Si la receta está en favoritas
+  toggleFavorita   function         Añadir o quitar favorita

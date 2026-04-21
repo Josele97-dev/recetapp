@@ -1,30 +1,119 @@
-# Rutas y navegación
+# 🧭 Rutas y navegación
 
-## Configuración
+------------------------------------------------------------------------
 
-Las rutas están configuradas en `src/App.tsx` usando React Router. El componente `BrowserRouter` envuelve toda la aplicación y `Routes` contiene las rutas definidas.
+## ⚙️ Configuración
 
-## Estructura de rutas
+Las rutas están configuradas en `src/App.tsx` usando **React Router
+v6**.\
+El componente `BrowserRouter` envuelve toda la aplicación y `Routes`
+contiene las rutas definidas.
 
-| Ruta | Página | Descripción |
-|------|--------|-------------|
-| `/` | `HomePage` | Pantalla principal con las fotocards de recetas |
-| `/receta/:id` | `RecipeDetailPage` | Detalle de una receta concreta |
-| `*` | `NotFoundPage` | Página 404 para rutas no encontradas |
+Además, la navegación programática se realiza con `useNavigate`.
 
-## Navegación entre páginas
+------------------------------------------------------------------------
 
-- Al hacer click en una card en `HomePage` navega a `/receta/:id` usando `useNavigate`
-- En `RecipeDetailPage` hay un botón "Volver" que navega a la página anterior con `navigate(-1)`
-- En `NotFoundPage` hay un botón que lleva de vuelta al inicio con `navigate('/')`
+## 🗺️ Estructura de rutas
 
-## Páginas
+  -----------------------------------------------------------------------
+  Ruta             Página                Descripción
+  ---------------- --------------------- --------------------------------
+  /                HomePage              Pantalla principal con buscador,
+                                         filtros, orden y cards
 
-### HomePage
-Pantalla principal de la app. Muestra las fotocards de recetas con el buscador y los filtros por categoría.
+  /receta/:id      RecipeDetailPage      Detalle de una receta concreta
 
-### RecipeDetailPage
-Muestra el detalle completo de una receta: imagen, categoría, descripción, ingredientes y pasos. Recibe el `id` de la receta por la URL con `useParams`.
+  \*               NotFoundPage          Página 404 para rutas no
+                                         encontradas
+  -----------------------------------------------------------------------
 
-### NotFoundPage
-Página 404 que se muestra cuando el usuario intenta acceder a una ruta que no existe.
+Esta estructura coincide con tu `App.tsx` actual.
+
+------------------------------------------------------------------------
+
+## 🔀 Navegación entre páginas
+
+### ➡️ Desde HomePage → RecipeDetailPage
+
+Cuando el usuario hace click en el botón **"Ver receta"** dentro de una
+`RecipeCard`, se navega a:
+
+``` ts
+/receta/{id}
+```
+
+Esto se hace con:
+
+``` ts
+navigate(`/receta/${id}`)
+```
+
+------------------------------------------------------------------------
+
+### ⬅️ Desde RecipeDetailPage → atrás
+
+En la página de detalle hay un botón **"← Volver"** que usa:
+
+``` ts
+navigate(-1)
+```
+
+------------------------------------------------------------------------
+
+### 🏠 Desde NotFoundPage → inicio
+
+El botón de la página 404 redirige a:
+
+``` ts
+navigate('/')
+```
+
+------------------------------------------------------------------------
+
+## 📄 Páginas
+
+### 🏡 HomePage
+
+Pantalla principal de la aplicación.
+
+Incluye:
+
+-   buscador\
+-   filtros por categoría\
+-   filtro de favoritas\
+-   orden A-Z / Z-A\
+-   botón de receta aleatoria\
+-   cards de recetas\
+-   skeletons mientras carga
+
+Toda la lógica proviene del hook `useRecetas`.
+
+------------------------------------------------------------------------
+
+### 📖 RecipeDetailPage
+
+Muestra el detalle completo de una receta:
+
+-   imagen\
+-   categoría\
+-   descripción\
+-   ingredientes\
+-   pasos\
+-   botón de favorita
+
+Obtiene el id desde la URL con:
+
+``` ts
+const { id } = useParams()
+```
+
+La lógica proviene del hook `useRecetaDetalle`.
+
+Incluye un skeleton mientras carga.
+
+------------------------------------------------------------------------
+
+### 🚫 NotFoundPage
+
+Página 404 que aparece cuando el usuario accede a una ruta inexistente.\
+Incluye un botón para volver al inicio.
