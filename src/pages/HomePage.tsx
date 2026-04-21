@@ -54,10 +54,10 @@ function HomePage() {
 
       <header className="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white py-5 shadow-md">
         <h1 className="text-5xl font-extrabold text-center tracking-tight drop-shadow">
-         RecetApp
+          RecetApp
         </h1>
         <p className="text-center text-white/90 text-lg mt-2">
-         Encuentra recetas rápidas, fáciles y deliciosas
+          Encuentra recetas rápidas, fáciles y deliciosas
         </p>
       </header>
 
@@ -69,6 +69,7 @@ function HomePage() {
 
           <div className="flex items-center">
 
+            {/* FAVORITAS */}
             <button
               onClick={toggleFavoritas}
               className={`
@@ -81,6 +82,7 @@ function HomePage() {
               Favoritas ❤️
             </button>
 
+            {/* ORDENAR */}
             <button
               onClick={toggleOrden}
               className="
@@ -89,9 +91,12 @@ function HomePage() {
                 hover:bg-gray-100
               "
             >
-              {orden === "az" ? "Orden: Z–A" : "Orden: A–Z"}
+              {orden === "none" && "Sin ordenar"}
+              {orden === "az" && "A‑Z 🔼"}
+              {orden === "za" && "Z‑A 🔽"}
             </button>
 
+            {/* ALEATORIA */}
             <button
               onClick={irARecetaAleatoria}
               className="

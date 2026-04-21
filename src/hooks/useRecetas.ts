@@ -70,7 +70,11 @@ function useRecetas() {
   }, [])
 
   const toggleOrden = useCallback(() => {
-    setOrden((prev) => (prev === 'az' ? 'za' : 'az'))
+    setOrden((prev) => {
+      if (prev === 'none') return 'az'
+      if (prev === 'az') return 'za'
+      return 'none'
+    })
   }, [])
 
   const recetaAleatoria = useCallback(() => {
