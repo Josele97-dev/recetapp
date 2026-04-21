@@ -54,7 +54,7 @@ function HomePage() {
         <p className="text-red-500 font-semibold">Error: {error}</p>
         <button
           onClick={() => window.location.reload()}
-          className="mt-4 px-4 py-2 bg-orange-500 text-white rounded-lg shadow hover:bg-orange-600"
+          className="mt-4 px-4 py-2 bg-orange-500 text-white rounded-lg shadow hover:bg-orange-600 cursor-pointer"
         >
           Reintentar
         </button>
@@ -86,41 +86,33 @@ function HomePage() {
 
           <SearchBar valor={busqueda} onChange={handleBusquedaChange} />
 
-          <div className="flex items-center">
+          <div className="flex items-center gap-2 ml-4">
 
             <button
               onClick={toggleFavoritas}
               className={`
-                ml-4 px-4 py-2 rounded-lg font-medium transition
+                h-10 w-36 rounded-lg font-medium transition cursor-pointer flex items-center justify-center gap-2
                 ${mostrarFavoritas
-                  ? 'bg-orange-400 text-white shadow-md'
-                  : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-100'}
+                  ? 'bg-orange-400 text-white border border-orange-400 shadow-sm'
+                  : 'bg-white text-orange-600 border border-orange-300 hover:bg-orange-50 shadow-sm'}
               `}
             >
-              Favoritas ❤️
+              <span className="text-lg">❤️</span>
+              Favoritas
             </button>
 
             <button
               onClick={toggleOrden}
-              className="
-                ml-4 px-4 py-2 rounded-lg font-medium transition
-                bg-white text-gray-700 border border-gray-300
-                hover:bg-gray-100
-              "
+              className="h-10 w-36 rounded-lg font-medium transition bg-white text-orange-600 border border-orange-300 hover:bg-orange-50 shadow-sm cursor-pointer flex items-center justify-center gap-2"
             >
-              {orden === "none" && "Sin ordenar"}
-              {orden === "az" && "A‑Z 🔼"}
-              {orden === "za" && "Z‑A 🔽"}
+              {orden === "none" && <><span className="text-lg">🔀</span> Sin orden</>}
+              {orden === "az" && <><span className="text-lg">🔼</span> A‑Z</>}
+              {orden === "za" && <><span className="text-lg">🔽</span> Z‑A</>}
             </button>
 
             <button
               onClick={irARecetaAleatoria}
-              className="
-                ml-4 px-4 py-2 rounded-lg font-semibold transition
-                bg-white text-orange-600 border border-orange-300
-                hover:bg-orange-50 shadow-sm
-                flex items-center gap-2
-              "
+              className="h-10 w-36 rounded-lg font-semibold transition bg-white text-orange-600 border border-orange-300 hover:bg-orange-50 shadow-sm flex items-center justify-center gap-2 cursor-pointer"
             >
               <span className="text-lg">🎲</span>
               Aleatoria
@@ -147,7 +139,7 @@ function HomePage() {
             </p>
             <button
               onClick={toggleFavoritas}
-              className="px-5 py-2 bg-orange-500 text-white rounded-lg shadow hover:bg-orange-600 transition"
+              className="px-5 py-2 bg-orange-500 text-white rounded-lg shadow hover:bg-orange-600 transition cursor-pointer"
             >
               Volver a todas las recetas
             </button>
