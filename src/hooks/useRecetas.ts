@@ -71,11 +71,12 @@ function useRecetas() {
   }, [])
 
   const toggleOrden = useCallback(() => {
-    setOrden((prev) => {
-      if (prev === 'none') return 'az'
-      if (prev === 'az') return 'za'
-      return 'none'
-    })
+    const siguiente: Record<'none' | 'az' | 'za', 'az' | 'za' | 'none'> = {
+      none: 'az',
+      az: 'za',
+      za: 'none'
+    }
+    setOrden((prev) => siguiente[prev])
   }, [])
 
   const recetaAleatoria = useCallback(() => {
