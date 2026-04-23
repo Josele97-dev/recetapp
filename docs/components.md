@@ -93,9 +93,9 @@ Muestra un corazón relleno si es favorita y vacío si no lo es.
 ### Props
 
   Prop         Tipo          Descripción
-  ------------ ------------- -------------------------------------------
+  ------------ ------------- -------------------------------------
   esFavorita   boolean       Si la receta está en favoritas o no
-  onClick      () =\> void   Función que se ejecuta al pulsar el botón
+  onClick      () =\> void   Función que se ejecuta al pulsar
 
 ### Uso
 
@@ -110,19 +110,39 @@ Muestra un corazón relleno si es favorita y vacío si no lo es.
 
 # Skeletons (componentes de carga)
 
-## RecipeSkeleton
+## HomeSkeleton (nuevo)
 
-Componente que muestra un placeholder visual mientras se cargan las
-recetas en la HomePage.\
-Simula la estructura de una tarjeta de receta con bloques grises
-animados.
+Componente que muestra un placeholder visual mientras se cargan todas
+las recetas de la HomePage.\
+Sustituye al skeleton inline que antes estaba dentro de la página.
 
 ### Características
 
--   Card blanca con sombra
--   Imagen simulada (`h-48 bg-gray-200`)
--   Varias líneas de texto simuladas
--   Animación `animate-pulse`
+-   Grid simulada con varias tarjetas fantasma\
+-   Cada tarjeta usa bloques grises animados\
+-   Animación `animate-pulse`\
+-   No recibe props\
+-   Mejora la separación entre UI y lógica de carga
+
+### Uso
+
+``` tsx
+<HomeSkeleton />
+```
+
+------------------------------------------------------------------------
+
+## RecipeSkeleton
+
+Componente que muestra un placeholder visual mientras se cargan las
+recetas individuales dentro del grid.
+
+### Características
+
+-   Card blanca con sombra\
+-   Imagen simulada (`h-48 bg-gray-200`)\
+-   Varias líneas de texto simuladas\
+-   Animación `animate-pulse`\
 -   No recibe props
 
 ### Uso
@@ -140,14 +160,14 @@ se carga la información desde la API.
 
 ### Características
 
--   Fondo gris degradado igual que RecipeDetailPage
--   Header con un bloque simulando el botón de volver
--   Contenedor blanco con sombra
--   Imagen grande simulada (`h-80 bg-gray-200`)
--   Título, categoría y descripción simulados
--   Lista de ingredientes simulada
--   Lista de pasos simulada
--   Animación `animate-pulse`
+-   Fondo gris degradado igual que RecipeDetailPage\
+-   Header con un bloque simulando el botón de volver\
+-   Contenedor blanco con sombra\
+-   Imagen grande simulada (`h-80 bg-gray-200`)\
+-   Título, categoría y descripción simulados\
+-   Lista de ingredientes simulada\
+-   Lista de pasos simulada\
+-   Animación `animate-pulse`\
 -   No recibe props
 
 ### Uso
