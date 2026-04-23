@@ -14,14 +14,9 @@ export function useRecetaDetalle(id?: string) {
     setError(null)
 
     fetchRecetaById(Number(id))
-      .then((data) => {
-        setReceta(data)
-        setLoading(false)
-      })
-      .catch((err: Error) => {
-        setError(err.message)
-        setLoading(false)
-      })
+      .then((data) => setReceta(data))
+      .catch((err: Error) => setError(err.message))
+      .finally(() => setLoading(false))
   }, [id])
 
   return { receta, loading, error }
