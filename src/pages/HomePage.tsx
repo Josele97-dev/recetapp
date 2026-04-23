@@ -1,7 +1,7 @@
 import RecipeCard from '../components/RecipeCard'
 import FilterBar from '../components/FilterBar'
 import SearchBar from '../components/SearchBar'
-import RecipeSkeleton from '../components/RecipeSkeleton'
+import HomeSkeleton from '../components/HomeSkeleton'
 import useRecetas from '../hooks/useRecetas'
 import { useNavigate } from "react-router-dom"
 
@@ -37,20 +37,7 @@ function HomePage() {
     recetaAleatoria,
   } = useRecetas()
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-100 py-4 px-3">
-        <AppHeader />
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <RecipeSkeleton key={i} />
-            ))}
-          </div>
-        </div>
-      </div>
-    )
-  }
+  if (loading) return <HomeSkeleton />
 
   if (error) {
     return (

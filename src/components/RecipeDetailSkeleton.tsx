@@ -1,9 +1,10 @@
 function RecipeDetailSkeleton() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200">
+
       <header className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 shadow-lg">
         <div className="max-w-5xl mx-auto px-4 flex items-center">
-          <div className="h-10 w-24 bg-white/30 rounded-full animate-pulse" />
+          <div className="h-10 w-24 bg-white/20 rounded-full animate-pulse" />
         </div>
       </header>
 
