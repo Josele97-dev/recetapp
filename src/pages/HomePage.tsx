@@ -7,6 +7,17 @@ import { useNavigate } from "react-router-dom"
 
 const CATEGORIAS = ['Postres', 'Entrantes', 'Carnes', 'Pasta', 'Ensaladas', 'Sopas']
 
+const AppHeader = () => (
+  <header className="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white py-5 shadow-md">
+    <h1 className="text-5xl font-extrabold text-center tracking-tight drop-shadow">
+      RecetApp
+    </h1>
+    <p className="text-center text-white/90 text-lg mt-2">
+      Encuentra recetas rápidas, fáciles y deliciosas
+    </p>
+  </header>
+)
+
 function HomePage() {
   const navigate = useNavigate()
 
@@ -29,14 +40,7 @@ function HomePage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-100 py-4 px-3">
-        <header className="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white py-5 shadow-md">
-          <h1 className="text-5xl font-extrabold text-center tracking-tight drop-shadow">
-            RecetApp
-          </h1>
-          <p className="text-center text-white/90 text-lg mt-2">
-            Encuentra recetas rápidas, fáciles y deliciosas
-          </p>
-        </header>
+        <AppHeader />
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {Array.from({ length: 12 }).map((_, i) => (
@@ -50,14 +54,17 @@ function HomePage() {
 
   if (error) {
     return (
-      <div className="text-center mt-10">
-        <p className="text-red-500 font-semibold">Error: {error}</p>
-        <button
-          onClick={() => window.location.reload()}
-          className="mt-4 px-4 py-2 bg-orange-500 text-white rounded-lg shadow hover:bg-orange-600 cursor-pointer"
-        >
-          Reintentar
-        </button>
+      <div className="min-h-screen bg-gray-100 py-4 px-3">
+        <AppHeader />
+        <div className="text-center mt-10">
+          <p className="text-red-500 font-semibold">Error: {error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="mt-4 px-4 py-2 bg-orange-500 text-white rounded-lg shadow hover:bg-orange-600 cursor-pointer"
+          >
+            Reintentar
+          </button>
+        </div>
       </div>
     )
   }
@@ -71,14 +78,7 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-gray-100 py-4 px-3">
 
-      <header className="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white py-5 shadow-md">
-        <h1 className="text-5xl font-extrabold text-center tracking-tight drop-shadow">
-          RecetApp
-        </h1>
-        <p className="text-center text-white/90 text-lg mt-2">
-          Encuentra recetas rápidas, fáciles y deliciosas
-        </p>
-      </header>
+      <AppHeader />
 
       <div className="max-w-7xl mx-auto px-4 py-6">
 
