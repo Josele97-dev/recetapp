@@ -69,11 +69,13 @@ function HomePage() {
 
       <div className="max-w-7xl mx-auto px-4 py-6">
 
-        <div className="mb-6 flex justify-between items-center">
+        <div className="mb-6 w-full flex items-center gap-4 flex-wrap md:flex-nowrap">
 
-          <SearchBar valor={busqueda} onChange={handleBusquedaChange} />
+          <div className="w-full md:flex-1 md:max-w-[60rem]">
+            <SearchBar valor={busqueda} onChange={handleBusquedaChange} />
+          </div>
 
-          <div className="flex items-center gap-2 ml-4">
+          <div className="flex gap-2 justify-center md:justify-end flex-wrap md:flex-nowrap">
 
             <button
               onClick={toggleFavoritas}
@@ -133,6 +135,7 @@ function HomePage() {
           </div>
         )}
 
+        {/* ✔ Recuperado: solo mostramos el grid si NO estamos en favoritas vacías */}
         {!mostrarFavoritas || recetas.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {recetas.map((receta) => (
