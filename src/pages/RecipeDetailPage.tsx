@@ -13,53 +13,24 @@ function RecipeDetailPage() {
 
   if (loading) return <RecipeDetailSkeleton />
 
-  if (error) {
+  if (error || !receta || !receta.id) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 flex flex-col items-center justify-center text-center px-6">
         <div className="bg-white shadow-xl rounded-full p-8 mb-6">
           <span className="text-7xl">🍽️</span>
         </div>
-
         <h2 className="text-4xl font-extrabold text-gray-900 mb-3 tracking-tight">
           Receta no encontrada
         </h2>
-
-        <p className="text-gray-600 text-lg max-w-md mb-8">
-        La receta que buscas no existe, ha sido eliminada o el enlace es incorrecto </p>
-
-        <button
-          onClick={() => navigate('/')}
-          className="bg-orange-500 text-white px-8 py-3 rounded-xl text-lg font-semibold shadow-lg hover:bg-orange-600 transition cursor-pointer"
-        >
-          Volver al inicio
-        </button>
-      </div>
-    )
-  }
-
-  if (!receta || !receta.id) {
-    return (
-      <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 flex flex-col items-center justify-center text-center px-6">
-
-        <div className="bg-white shadow-xl rounded-full p-8 mb-6">
-          <span className="text-7xl">🍽️</span>
-        </div>
-
-        <h2 className="text-4xl font-extrabold text-gray-900 mb-3 tracking-tight">
-          Receta no encontrada
-        </h2>
-
         <p className="text-gray-600 text-lg max-w-md mb-8">
           La receta que buscas no existe, ha sido eliminada o el enlace es incorrecto.
         </p>
-
         <button
           onClick={() => navigate('/')}
           className="bg-orange-500 text-white px-8 py-3 rounded-xl text-lg font-semibold shadow-lg hover:bg-orange-600 transition cursor-pointer"
         >
           Volver al inicio
         </button>
-
       </div>
     )
   }
