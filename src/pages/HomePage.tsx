@@ -42,24 +42,24 @@ function HomePage() {
   if (error) {
     return (
       <div className="min-h-screen bg-gray-100 py-4 px-3">
-        <AppHeader />
-        <div className="text-center mt-10">
-          <p className="text-red-500 font-semibold">Error: {error}</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="mt-4 px-4 py-2 bg-orange-500 text-white rounded-lg shadow hover:bg-orange-600 cursor-pointer"
-          >
-            Reintentar
-          </button>
-        </div>
+       <AppHeader />
+      <div className="flex flex-col items-center justify-center mt-20 text-center px-4">
+         <span className="text-8xl mb-6">⚠️</span>
+         <h2 className="text-3xl font-bold text-gray-800 mb-3">
+          No se pudieron cargar las recetas
+         </h2>
+          <p className="text-gray-500 text-lg max-w-md mb-8">
+          Inténtalo de nuevo más tarde.
+          </p>
+         <button
+          onClick={() => window.location.reload()}
+          className="px-8 py-3 bg-orange-500 text-white rounded-xl text-lg font-semibold shadow-lg hover:bg-orange-600 transition cursor-pointer"
+        >
+          Reintentar
+        </button>
       </div>
+     </div>
     )
-  }
-
-  const irARecetaAleatoria = () => {
-    const r = recetaAleatoria()
-    if (!r) return
-    navigate(`/receta/${r.id}`)
   }
 
   return (
