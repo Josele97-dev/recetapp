@@ -28,6 +28,7 @@ Cualquier persona que cocine y quiera inspirarse con recetas de forma rápida y 
 - Buscador por nombre de receta
 - Indicador visual en las cards que ya están en favoritas
 - Versión responsive optimizada para móvil
+- Botones para navegar a anterior y siguiente receta en página detalle
 
 ---
 
