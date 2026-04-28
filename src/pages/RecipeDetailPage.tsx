@@ -13,14 +13,11 @@ function RecipeDetailPage() {
 
   if (loading) return <RecipeDetailSkeleton />
 
-  /* ================================
-     RECETA NO ENCONTRADA (INTEGRADO)
-     ================================ */
+ 
   if (error || !receta || !receta.id) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 flex flex-col">
 
-        {/* CONTENIDO CENTRAL */}
         <div className="flex flex-col items-center justify-center flex-1 text-center px-6">
           <div className="bg-white shadow-xl rounded-full p-8 mb-6">
             <span className="text-7xl">🍽️</span>
@@ -42,7 +39,6 @@ function RecipeDetailPage() {
           </button>
         </div>
 
-        {/* FOOTER */}
         <footer className="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white py-6 mt-10">
           <div className="max-w-7xl mx-auto text-center px-4">
             <p className="text-sm opacity-90">
@@ -63,11 +59,9 @@ function RecipeDetailPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 flex flex-col">
 
-      {/* HEADER */}
       <header className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 shadow-lg">
         <div className="max-w-5xl mx-auto px-4 flex justify-between items-center">
 
-          {/* Volver al menú */}
           <button
             onClick={() => navigate('/')}
             className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-white font-medium hover:bg-white/30 transition shadow cursor-pointer"
@@ -75,10 +69,8 @@ function RecipeDetailPage() {
             <span className="text-xl">←</span> Volver al menú principal
           </button>
 
-          {/* Navegación entre recetas */}
           <div className="flex items-center gap-3">
 
-            {/* Receta anterior */}
             <button
               onClick={() => navigate(`/receta/${Number(id) - 1}`)}
               disabled={Number(id) <= 1}
@@ -91,7 +83,6 @@ function RecipeDetailPage() {
               <span className="text-xl">⬅</span> Anterior
             </button>
 
-            {/* Receta siguiente */}
             <button
               onClick={() => navigate(`/receta/${Number(id) + 1}`)}
               disabled={Number(id) >= 30}
@@ -108,7 +99,6 @@ function RecipeDetailPage() {
         </div>
       </header>
 
-      {/* CONTENIDO */}
       <div className="max-w-5xl mx-auto px-4 py-10 flex-grow">
         <div className="bg-white shadow-xl rounded-2xl p-6 md:p-10">
 
@@ -173,7 +163,6 @@ function RecipeDetailPage() {
         </div>
       </div>
 
-      {/* FOOTER */}
       <footer className="w-full bg-gradient-to-r from-orange-400 to-orange-600 text-white py-6 mt-10">
         <div className="max-w-7xl mx-auto text-center px-4">
           <p className="text-sm opacity-90">
