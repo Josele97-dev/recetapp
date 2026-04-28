@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useFavoritas } from '../context/FavoritasContext'
 import FavoriteButton from '../components/FavoriteButton'
@@ -11,9 +12,12 @@ function RecipeDetailPage() {
 
   const { receta, loading, error } = useRecetaDetalle(id)
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [id])
+
   if (loading) return <RecipeDetailSkeleton />
 
- 
   if (error || !receta || !receta.id) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 flex flex-col">
