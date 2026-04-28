@@ -1,12 +1,27 @@
+import { memo } from 'react'
+import { useFavoritasQuery } from '../hooks/useFavoritasQuery'
+import { useAgregarFavorita } from '../hooks/useAgregarFavorita'
+import { useQuitarFavorita } from '../hooks/useQuitarFavorita'
+
 interface Props {
-  esFavorita: boolean
-  onClick: (e: React.MouseEvent) => void
+  id: number
 }
 
-function FavoriteButton({ esFavorita, onClick }: Props) {
+function FavoriteButtonComponent({ id }: Props) {
+  const { data: favoritas = [] } = useFavoritasQuery()
+  const agregarFavorita = useAgregarFavorita()
+  const quitarFavorita = useQuitarFavorita()
+
+  const esFavorita = favoritas.includes(id)
+
+  const handleClick = () => {
+    if (esFavorita) quitarFavorita.mutate(id)
+    else agregarFavorita.mutate(id)
+  }
+
   return (
     <button
-      onClick={onClick}
+      onClick={handleClick}
       className="text-2xl transition-transform hover:scale-110"
     >
       {esFavorita ? '❤️' : '🤍'}
@@ -14,4 +29,4 @@ function FavoriteButton({ esFavorita, onClick }: Props) {
   )
 }
 
-export default FavoriteButton
+export default memo(FavoriteButtonComponent)

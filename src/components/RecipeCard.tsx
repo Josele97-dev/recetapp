@@ -1,5 +1,5 @@
+import { memo } from 'react'
 import { Link } from 'react-router-dom'
-import { useFavoritas } from '../context/FavoritasContext'
 import FavoriteButton from './FavoriteButton'
 
 interface Props {
@@ -11,19 +11,11 @@ interface Props {
 }
 
 function RecipeCard({ id, nombre, descripcion, imagen, categoria }: Props) {
-  const { esFavorita, agregarFavorita, quitarFavorita } = useFavoritas()
-  const favorita = esFavorita(id)
-
-  const toggleFavorita = (e: React.MouseEvent) => {
-    e.stopPropagation()
-    favorita ? quitarFavorita(id) : agregarFavorita(id)
-  }
-
   return (
     <div className="rounded-xl overflow-hidden shadow-md bg-white hover:shadow-lg transition-shadow relative flex flex-col">
 
       <div className="absolute top-2 right-2 z-10">
-        <FavoriteButton esFavorita={favorita} onClick={toggleFavorita} />
+        <FavoriteButton id={id} />
       </div>
 
       <img src={imagen} alt={nombre} className="w-full h-48 object-cover" />
@@ -47,4 +39,4 @@ function RecipeCard({ id, nombre, descripcion, imagen, categoria }: Props) {
   )
 }
 
-export default RecipeCard
+export default memo(RecipeCard)

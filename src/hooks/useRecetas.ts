@@ -1,5 +1,5 @@
 import { useRecetasContext } from '../context/RecetasContext'
-import { useFavoritas } from '../context/FavoritasContext'
+import { useFavoritasQuery } from './useFavoritasQuery'
 import { useMemo } from 'react'
 
 function useRecetas() {
@@ -18,12 +18,13 @@ function useRecetas() {
     recetaAleatoria,
   } = useRecetasContext()
 
-  const { esFavorita } = useFavoritas()
+  // AHORA USAMOS REACT QUERY
+  const { data: favoritas = [] } = useFavoritasQuery()
 
   const recetas = useMemo(() => {
     if (!mostrarFavoritas) return recetasFiltradas
-    return recetasFiltradas.filter((r) => esFavorita(r.id))
-  }, [recetasFiltradas, mostrarFavoritas, esFavorita])
+    return recetasFiltradas.filter((r) => favoritas.includes(r.id))
+  }, [recetasFiltradas, mostrarFavoritas, favoritas])
 
   return {
     recetas,

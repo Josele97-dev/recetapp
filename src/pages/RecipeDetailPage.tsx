@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { useFavoritas } from '../context/FavoritasContext'
 import FavoriteButton from '../components/FavoriteButton'
 import RecipeDetailSkeleton from '../components/RecipeDetailSkeleton'
 import { useRecetaDetalle } from '../hooks/useRecetaDetalle'
@@ -8,7 +7,6 @@ import { useRecetaDetalle } from '../hooks/useRecetaDetalle'
 function RecipeDetailPage() {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { esFavorita, agregarFavorita, quitarFavorita } = useFavoritas()
 
   const { receta, loading, error } = useRecetaDetalle(id)
 
@@ -57,8 +55,6 @@ function RecipeDetailPage() {
       </div>
     )
   }
-
-  const favorita = esFavorita(receta.id)
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 flex flex-col">
@@ -118,12 +114,9 @@ function RecipeDetailPage() {
             <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
               {receta.nombre}
             </h1>
-            <FavoriteButton
-              esFavorita={favorita}
-              onClick={() =>
-                favorita ? quitarFavorita(receta.id) : agregarFavorita(receta.id)
-              }
-            />
+
+            {/* FAVORITE BUTTON NUEVO */}
+            <FavoriteButton id={receta.id} />
           </div>
 
           <span className="inline-block bg-orange-100 text-orange-700 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 shadow-sm">
